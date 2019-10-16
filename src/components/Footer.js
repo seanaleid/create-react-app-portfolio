@@ -11,14 +11,14 @@ const useStyles = makeStyles(theme => ({
         margin: 'auto',
         width: '70%',
         backgroundColor: theme.palette.background.paper,
-        color:'rgba(27, 188, 155, 0.5)',
+        color:'#DCDCDC',
     },
     dividerFullWidth: {
         // padding: '10px 0',
         // margin: `5px 0 0 ${theme.spacing(2)}px`,
     },
     a:{
-        color: 'rgba(27, 188, 155, 0.5)', 
+        color: '#DCDCDC', 
     }
 }));
 
