@@ -10,7 +10,11 @@ import Footer from "../Footer";
 
 const useStyles = makeStyles(theme =>({
     font: {
-        color: "blue",
+        color: "#000",
+        width: '800px',
+        margin: '0 auto',
+        textAlign: 'center',
+        marginTop: '50px'
     },
 }));
 

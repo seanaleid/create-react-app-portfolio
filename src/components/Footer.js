@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
         // margin: `5px 0 0 ${theme.spacing(2)}px`,
     },
     a:{
-        color: '#DCDCDC', 
+        color: '#000', 
+        justifyContent: 'center'
     }
 }));
 
