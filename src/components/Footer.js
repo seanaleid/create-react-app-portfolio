@@ -36,7 +36,7 @@ export default function Footer() {
                         display="block"
                         variant="caption"
                         >
-                        <a className={classes.a} href="https://cook-book.netlify.com/index.html" style={{textDecoration:"none"}}>Copyright © 2019, Sean Naleid Vargas</a>
+                        <a className={classes.a} href="https://www.linkedin.com/in/sean-naleid/" style={{textDecoration:"none"}}>Copyright © 2019, Sean Naleid Vargas</a>
                     </Typography>
                 </li>
             </List>
