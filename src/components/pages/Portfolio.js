@@ -3,12 +3,14 @@ import React from "react"
 //Material UI
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core"
-import Container from '@material-ui/core/Container';
+import Container from '@material-ui/core/Container'
 
 //Components
 import Navigation from "../Navigation"
 import PortfolioCard from "./PortfolioCard"
 import Footer from "../Footer"
+import Projects from "../../utils/ProjectData"
+import SimpleCard from "./SimpleCard"
 
 const useStyles = makeStyles(theme =>({
     root: {
@@ -29,6 +31,7 @@ const useStyles = makeStyles(theme =>({
         border: "5px solid #DCDCDC",
         marginLeft: '20px',
         borderRadius: '10px',
+        maxWidth: 345,
     },
     font: {
         color: "#000",
@@ -52,13 +55,19 @@ export default function Skills(){
                         </Container>
                         <Container className={classes.insideContainer}>
                             <PortfolioCard />
+                            {Projects.map((project, index1) => (
+                                <PortfolioCard key={index1._id} project={project} />
+                            ))}
+                            {/* {Projects.map((project, index2) =>(
+                                <SimpleCard key={index2._id} project={project} />
+                            ))} */}
                             <div className={classes.tempBox}>
                                 <h1>Project Name: Build Week 1</h1>
                                 <p>Link: <a href="https://better-professor-ui.netlify.com">Visit the Landing Page</a></p>
                             </div>
                             <div className={classes.tempBox}>
                                 <h1>Project Name: Build Week 2</h1>
-                                <p>Link: <a href="cookbooker.netlify.com">Let's get cooking!</a></p>
+                                <p>Link: <a href="https://cookbooker.netlify.com">Let's get cooking!</a></p>
                             </div>
                             <div className={classes.tempBox}>
                                 <h1>Project Name: Team-Builder </h1>
