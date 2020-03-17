@@ -3143,21 +3143,29 @@ input, select, textarea {
 		visibility: visible;
 	}
 
-		body.is-menu-visible #menu > * {
-			opacity: 1;
-		}
+	body.is-menu-visible #menu > * {
+		opacity: 1;
+	}
 
-		body.is-menu-visible #menu .close {
-			-moz-transform: scale(1.0) rotate(0deg);
-			-webkit-transform: scale(1.0) rotate(0deg);
-			-ms-transform: scale(1.0) rotate(0deg);
-			transform: scale(1.0) rotate(0deg);
-			opacity: 1;
-		}
+	body.is-menu-visible #menu .close {
+		-moz-transform: scale(1.0) rotate(0deg);
+		-webkit-transform: scale(1.0) rotate(0deg);
+		-ms-transform: scale(1.0) rotate(0deg);
+		transform: scale(1.0) rotate(0deg);
+		opacity: 1;
+	}
 
-		.menu-link:hover {
-			color: #be90d4 !important;
-		}
+	.menu-link:hover {
+		color: #be90d4 !important;
+	}
+
+	.hidden {
+		text-indent: -10000px;
+	}
+/* 
+	#pagenav {
+		text-indent: -5000px;
+	} */
 
 /* Main */
 
