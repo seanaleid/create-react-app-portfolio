@@ -3156,7 +3156,8 @@ input, select, textarea {
 	}
 
 	.menu-link:hover {
-		color: #be90d4 !important;
+		color: #FCF6E5 !important;
+		font-weight: 800;
 	}
 
 	.hidden {
