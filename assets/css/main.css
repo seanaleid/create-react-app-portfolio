@@ -2962,12 +2962,28 @@ input, select, textarea {
 
 		}
 
+	.opening {
+		display: flex;
+		flex-direction: column;;
+		justify-content: center;
+	}
+
 	.first-name {
 		font-size: 10rem;
+		opacity: 0;
 	}
 
 	.last-name{
 		font-size: 20rem;
+		opacity: 0;
+	}
+
+	.coin {
+		top: 10rem;
+		left: 20rem;
+		position: absolute;
+		/* border: 2px solid blue; */
+		z-index: 100;
 	}
 /* Menu */
 
