@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/modal.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
@@ -69,17 +70,31 @@
 
 								<p>My interest in becoming a web developer was sparked in a graduate translation class in Barcelona, Spain. Translating code related material comes with many difficulties due to the way that code is written. I was inspired to apply my linguistic and pedagogical experience to the coding world and offer a different point of view when writing code, mainly focusing on the user and how they will interact with the UI. </p>
 							</header>
+
 							<section class="tiles">
 								<article class="style1">
 									<span class="image">
 										<img src="images/pic01.jpg" alt="" />
 									</span>
-									<a href="generic.html">
+									<!-- <a href="generic.html">
 										<h2>Project</h2>
 										<div class="content">
 											<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
 										</div>
-									</a>
+									</a> -->
+
+									<!-- Modal content -->
+									<button id="myBtn"> Open </button>
+									<div id="myModal" class="modal">
+										<div class="modal-content">
+											<span class="close">&times;</span>
+											<h2>Build Week 1</h2>
+											<img src="images/pic11.jpg" />
+											<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est culpa vitae error sunt animi veritatis ex blanditiis ipsam, suscipit eveniet odit. Corporis provident recusandae saepe ex minima. Odit, recusandae asperiores maxime quis sed soluta hic neque nemo sapiente molestias. Dolorum minus deserunt voluptate cum itaque animi quo perspiciatis, laboriosam accusantium repudiandae rerum maxime? Veniam, modi tempore aut soluta et rem inventore eveniet saepe dicta possimus fuga quos adipisci laborum! Porro dignissimos consequatur maxime distinctio voluptatum asperiores repellendus dicta et nulla.</p>
+											<li><a href="https://github.com/seanaleid" target="_blank" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+											<a href="#">Figma</a>
+										</div>
+									</div>
 								</article>
 								<article class="style2">
 									<span class="image">
@@ -211,8 +226,7 @@
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-								<form  action="https://formspree.io/xgelewpy"
-								method="POST">
+								<form  action="https://formspree.io/xgelewpy" method="POST">
 									<div class="fields">
 										<div class="field half">
 											<input type="text" name="name" id="name" placeholder="Name" />
@@ -249,6 +263,7 @@
 		<!-- Scripts -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 			<script src="assets/js/timeline.js"></script>
+			<script src="assets/js/modal.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
