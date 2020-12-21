@@ -32,8 +32,7 @@ const Projects = () => {
           Projects
         </Typography>
         <div>
-          <h2>Projects test</h2>
-          <h2>Projects test 2</h2>
+          <h2>Projects go here</h2>
         </div>
       </Container>
     </React.Fragment>
