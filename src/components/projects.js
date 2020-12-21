@@ -31,6 +31,10 @@ const Projects = () => {
         <Typography variant="h1" className={classes.title}>
           Projects
         </Typography>
+        <div>
+          <h2>Projects test</h2>
+          <h2>Projects test 2</h2>
+        </div>
       </Container>
     </React.Fragment>
   );
