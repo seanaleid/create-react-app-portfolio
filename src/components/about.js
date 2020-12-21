@@ -83,7 +83,7 @@ const About = () => {
                 Erik R.
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
-                I was fortunate to be placed under Sean's leadership at Lambda.
+                I was fortunate to be placed under Sean&apos;s leadership at Lambda.
                 Sean is a phenomenal person, speaker, and educator! One of his
                 skills I admired while interacting with Sean is his ability to
                 explain and break down complex software problems...
@@ -151,7 +151,7 @@ const About = () => {
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
                 If I had to sum Sean up in one word it would most definitely be
-                Teacher. In it's truest form Sean was not simply a team leader
+                Teacher. In its truest form Sean was not simply a team leader
                 but I would go as far as calling him our personal instructor,
                 motivator, and most of all friend. He would take any and all
                 time needed to not only help us solve...
