@@ -36,7 +36,20 @@ const useStyles = makeStyles({
   card: {
     width: "260px",
     margin: "20px",
+    boxShadow: "none",
+    '&:hover': {
+      transitionDelay: "150ms",
+      transitionTimingFunction: "ease-in-out",
+      boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
+    }
   },
+  button: {
+    '&:hover': {
+      transitionDelay: "100ms",
+      transitionTimingFunction: "ease-in-out",
+      backgroundColor: "#7fff00",
+    }
+  }
 });
 
 const About = () => {
@@ -94,6 +107,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                className={classes.button}
               >
                 Read More
               </Button>
@@ -117,6 +131,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                className={classes.button}
               >
                 Read More
               </Button>
@@ -139,6 +154,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                className={classes.button}
               >
                 Read More
               </Button>
@@ -162,6 +178,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                className={classes.button}
               >
                 Read More
               </Button>
@@ -185,6 +202,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                className={classes.button}
               >
                 Read More
               </Button>
@@ -208,6 +226,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                className={classes.button}
               >
                 Read More
               </Button>
