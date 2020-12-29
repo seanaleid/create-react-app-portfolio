@@ -38,7 +38,7 @@ const classes = useStyles();
           </Typography>
           {/* <TypeWriter/> */}
           <ReactRotatingText 
-            items={["a software developer.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
+            items={["a software developer.", "a project manager.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
             className="typewriter"
             color={"#6C63FF"}
           />
