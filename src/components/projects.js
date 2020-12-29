@@ -14,16 +14,10 @@ const useStyles = makeStyles({
   },
   title: {
     color: "#ff1493",
-    fontWeight: "bold",
+    fontWeight: "1000",
     fontFamily: "Fjalla one",
     marginTop: "3rem",
     marginBottom: "3rem",
-  },
-  subtitle: {
-    marginBottom: "3rem",
-  },
-  text: {
-    marginBottom: "1rem",
   },
   cardContainer: {
     display: "flex",

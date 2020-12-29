@@ -8,7 +8,9 @@ const useStyles = makeStyles({
     margin: "0 auto",
     maxWidth: "1000px",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    position: "realtive",
+    bottom: "0px"
   },
   title: {
     color: "#708090",

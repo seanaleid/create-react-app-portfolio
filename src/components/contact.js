@@ -21,14 +21,7 @@ const useStyles = makeStyles({
     color: "#c24cf6",
     fontWeight: "bold",
     fontFamily: "Fjalla one",
-    marginTop: "3rem",
     marginBottom: "3rem",
-  },
-  subtitle: {
-    marginBottom: "3rem",
-  },
-  text: {
-    marginBottom: "1rem",
   },
   avatar: {
     margin: "3rem",

@@ -2,6 +2,8 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
+import ReactRotatingText from "react-rotating-text";
+import "./typewriter.css";
 
 const useStyles = makeStyles({
   box: {
@@ -15,11 +17,10 @@ const useStyles = makeStyles({
     marginTop: "3rem",
     marginBottom: "3rem",
   },
-  subtitle: {
-    marginBottom: "3rem",
-  },
-  text: {
-    marginBottom: "1rem",
+  inside: {
+    display: "flex",
+    alignItems: "center",
+    margin: "0"
   },
 });
 
@@ -28,9 +29,20 @@ const classes = useStyles();
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Typography variant="h1" className={classes.title}>
-          Welcome
+        <Typography variant="h3" className={classes.title}>
+          Hi, my name is <h1 style={{display: "inline", fontSize: "10rem"}}>Sean!</h1>
         </Typography>
+        <div className={classes.inside}>
+          <Typography variant="h3" className={classes.title}>
+            I&#39;m   
+          </Typography>
+          {/* <TypeWriter/> */}
+          <ReactRotatingText 
+            items={["a software developer.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
+            className="typewriter"
+            color={"#6C63FF"}
+          />
+        </div>
       </Container>
     </React.Fragment>
   );
