@@ -70,7 +70,7 @@ export default function ElevateAppBar(props) {
           <Toolbar className={classes.toolbar}>
             <Typography variant="h6" className={classes.text}>
               <Link to="/" className={classes.linkText}>
-                Sean Naleid
+                Home
               </Link>
             </Typography>
             <Toolbar className={classes.links}>
