@@ -107,6 +107,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
               >
                 Read More
@@ -131,6 +132,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
               >
                 Read More
@@ -154,6 +156,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
               >
                 Read More
@@ -178,6 +181,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
               >
                 Read More
@@ -202,6 +206,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
               >
                 Read More
@@ -226,6 +231,7 @@ const About = () => {
                 size="small"
                 href="https://www.linkedin.com/in/sean-naleid/"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
               >
                 Read More
