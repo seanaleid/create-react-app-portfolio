@@ -10,7 +10,7 @@ export const colorz = {
         border: '3px solid rgba(252,110,34,1)',
     },
     1: {
-        home: 'rgba(108,99,255,1)',
+        home: 'rgba(255,20,147,1)',
         about: 'rgba(108,99,255,1)',
         projects: 'rgba(108,99,255,1)',
         contact: 'rgba(108,99,255,1)',

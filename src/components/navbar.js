@@ -152,5 +152,5 @@ export default function ElevateAppBar(props) {
 }
 
 ElevateAppBar.propTypes = {
-  colors: PropTypes.arrayOf(PropTypes.object),
+  colors: PropTypes.object,
 }

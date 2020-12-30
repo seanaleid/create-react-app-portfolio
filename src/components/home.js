@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import ReactRotatingText from "react-rotating-text";
+import PropTypes from "prop-types";
 
 const useStyles = makeStyles({
   box: {
@@ -10,12 +11,10 @@ const useStyles = makeStyles({
     maxWidth: "1000px",
   },
   titleTop: {
-    color: "#6C63FF",
     display: "flex",
     alignItems: "baseline",
   },
   title: {
-    color: "#6C63FF",
     fontWeight: "1000",
     fontFamily: "Fjalla one",
   },
@@ -40,7 +39,7 @@ const useStyles = makeStyles({
 
 const Home = (props) => {
 const classes = useStyles();
-console.log(props)
+const {colors} = props;
 
   return (
     <React.Fragment>
@@ -49,27 +48,35 @@ console.log(props)
           <Typography 
             variant="h3" 
             className={classes.title}
-            // style={{color: `${props.colors.}`}}
+            style={{color: `${colors.home}`}}
           >
             Hi, my name is 
           </Typography>
-          <h1 className={classes.name}>Sean!</h1>
+          <h1 
+            className={classes.name} 
+            style={{color: `${colors.home}`}}
+          >
+            Sean!</h1>
         </div>
         <div className={classes.inside}>
-          <Typography variant="h3" className={classes.title}>
+          <Typography variant="h3" className={classes.title} style={{color: `${colors.home}`}}>
             I&#39;m   
           </Typography>
           {/* <TypeWriter/> */}
           <ReactRotatingText 
             items={["a software developer.", "a project manager.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
             className={classes.typewriter}
-            color={"#6C63FF"}
+            color={colors.home}
           />
         </div>
       </Container>
     </React.Fragment>
   );
 };
+
+Home.propTypes = {
+  colors: PropTypes.object,
+}
 
 export default Home;
 

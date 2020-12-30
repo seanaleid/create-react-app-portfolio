@@ -30,7 +30,8 @@ function App() {
     <div className="App" onClick={handleChangeColors}>
       <Navbar colors={colors} />
       <Switch>
-        <Route exact path="/" component={Home} colors={colors}/>
+        {/* <Route exact path="/" component={Home} colors={colors}/> */}
+        <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
         <Route path="/about" component={About} />
         <Route path="/projects" component={Projects} />
         <Route path="/contact" component={Contact} />
