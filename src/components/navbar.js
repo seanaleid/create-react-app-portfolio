@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,7 +7,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import colors from "./colors.js";
 
 // import {useDarkMode} from "../hooks/useDarkMode.js";
 
@@ -34,7 +33,6 @@ ElevationScroll.propTypes = {
 
 const useStyles = makeStyles({
   bar: {
-    background: 'rgba(250,250,250,1)',
     display: "flex",
     boxShadow: 'none',
   },
@@ -52,20 +50,15 @@ const useStyles = makeStyles({
   },
   linkText: {
     marginLeft: "20px",
-    color: "#708090",
     textDecoration: "none",
     paddingLeft: "10px",
     fontFamily: 'Roboto',
     "&:hover": {
-      borderBottom: "3px solid #FC6E22",
-
-      color: "#FC6E22",
       fontWeight: "600",
     },
   },
   btn: {
     marginLeft: "20px",
-    color: "#708090",
     textDecoration: "none",
     minWidth: "40px",
     border: "none",
@@ -80,9 +73,12 @@ export default function ElevateAppBar(props) {
   //     e.preventDefault();
   //     setDarkMode(!darkMode);
   // };
-  
+  const [homeHover, setHomeHover] = useState(false)
+  const [aboutHover, setAboutHover] = useState(false)
+  const [projectsHover, setProjectsHover] = useState(false)
+  const [contactHover, setContactHover] = useState(false)
   const classes = useStyles();
-  console.log(colors[0]);
+  const {colors} = props;
 
   // const lightMoon = <span role="img" aria-label="light mode moon emoji">🌝</span>;
   // const darkMoon = <span role="img" aria-label="dark mode moon emoji">🌚</span>
@@ -90,26 +86,58 @@ export default function ElevateAppBar(props) {
     <>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar className={classes.bar} >
+        <AppBar className={classes.bar} style={{background: `${colors.body}`}}>
           <Toolbar className={classes.toolbar}>
             <Typography variant="h6" className={classes.text}>
-              <Link to="/" className={classes.linkText}>
+              <Link to="/" 
+                className={classes.linkText} 
+                onMouseEnter={() => {setHomeHover(true)}}
+                onMouseLeave={() => {setHomeHover(false)}}
+                style={{
+                  color: (homeHover ? `${colors.highlight}` : `${colors.text}`),
+                  borderBottom: (homeHover ? `${colors.border}` : null),
+                }} 
+              >
                 Home
               </Link>
             </Typography>
             <Toolbar className={classes.links}>
               <Typography variant="h6" className={classes.text}>
-                <Link to="/about" className={classes.linkText}>
+                <Link to="/about" 
+                  className={classes.linkText} 
+                  onMouseEnter={() => {setAboutHover(true)}}
+                  onMouseLeave={() => {setAboutHover(false)}}
+                  style={{
+                    color: (aboutHover ? `${colors.highlight}` : `${colors.text}`),
+                    borderBottom: (aboutHover ? `${colors.border}` : null),
+                  }}   
+                >
                   About
                 </Link>
               </Typography>
               <Typography variant="h6" className={classes.text}>
-                <Link to="/projects" className={classes.linkText}>
+                <Link to="/projects" 
+                  className={classes.linkText} 
+                  onMouseEnter={() => {setProjectsHover(true)}}
+                  onMouseLeave={() => {setProjectsHover(false)}}
+                  style={{
+                    color: (projectsHover ? `${colors.highlight}` : `${colors.text}`),
+                    borderBottom: (projectsHover ? `${colors.border}` : null),
+                  }} 
+                >
                   Projects
                 </Link>
               </Typography>
               <Typography variant="h6" className={classes.text}>
-                <Link to="/contact" className={classes.linkText}>
+                <Link to="/contact" 
+                  className={classes.linkText} 
+                  onMouseEnter={() => {setContactHover(true)}}
+                  onMouseLeave={() => {setContactHover(false)}}
+                  style={{
+                    color: (contactHover ? `${colors.highlight}` : `${colors.text}`),
+                    borderBottom: (contactHover ? `${colors.border}` : null),
+                  }} 
+                >
                   Contact
                 </Link>
               </Typography>
@@ -121,4 +149,8 @@ export default function ElevateAppBar(props) {
       <Toolbar />
     </>
   );
+}
+
+ElevateAppBar.propTypes = {
+  colors: PropTypes.arrayOf(PropTypes.object),
 }

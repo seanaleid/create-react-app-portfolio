@@ -9,28 +9,52 @@ const useStyles = makeStyles({
     margin: "0 auto",
     maxWidth: "1000px",
   },
+  titleTop: {
+    color: "#6C63FF",
+    display: "flex",
+    alignItems: "baseline",
+  },
   title: {
     color: "#6C63FF",
     fontWeight: "1000",
     fontFamily: "Fjalla one",
-    marginTop: "3rem",
-    marginBottom: "3rem",
+  },
+  name: {
+    fontWeight: "1000",
+    fontFamily: "Fjalla one",
+    fontSize: "10rem",
+    marginLeft: "0.5rem"
   },
   inside: {
     display: "flex",
     alignItems: "center",
     margin: "0"
   },
+  typewriter: {
+    fontSize: "3rem",
+    fontFamily: "Fjalla one",
+    fontWeight: "1000",
+    marginLeft: "0.5rem"
+  }
 });
 
-const Home = () => {
+const Home = (props) => {
 const classes = useStyles();
+console.log(props)
+
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Typography variant="h3" className={classes.title}>
-          Hi, my name is <h1 style={{display: "inline", fontSize: "10rem"}}>Sean!</h1>
-        </Typography>
+        <div className={classes.titleTop}>
+          <Typography 
+            variant="h3" 
+            className={classes.title}
+            // style={{color: `${props.colors.}`}}
+          >
+            Hi, my name is 
+          </Typography>
+          <h1 className={classes.name}>Sean!</h1>
+        </div>
         <div className={classes.inside}>
           <Typography variant="h3" className={classes.title}>
             I&#39;m   
@@ -38,7 +62,7 @@ const classes = useStyles();
           {/* <TypeWriter/> */}
           <ReactRotatingText 
             items={["a software developer.", "a project manager.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
-            className="typewriter"
+            className={classes.typewriter}
             color={"#6C63FF"}
           />
         </div>
