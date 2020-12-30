@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   title: {
     color: "#708090",
     fontWeight: "400",
-    fontFamily: "Fjalla one",
+    fontFamily: 'Roboto', 
     marginTop: "3rem",
     marginBottom: "3rem",
     position: "relative",

@@ -3,7 +3,6 @@ import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import ReactRotatingText from "react-rotating-text";
-import "./typewriter.css";
 
 const useStyles = makeStyles({
   box: {

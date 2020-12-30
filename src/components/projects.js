@@ -38,7 +38,11 @@ const useStyles = makeStyles({
       boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
     }
   },
+  pos: {
+    fontFamily: "Roboto",
+  },
   button: {
+    fontFamily: "Roboto",
     '&:hover': {
       transitionDelay: "100ms",
       transitionTimingFunction: "ease-in-out",
@@ -58,7 +62,7 @@ const Projects = () => {
         <Container className={classes.cardContainer}>
           <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" className={classes.pos} >
                 Project 1 
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
@@ -86,15 +90,11 @@ const Projects = () => {
           </Card>
           <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" className={classes.pos} >
                 Project 2
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
-                
-
-Praesent egestas ligula quis mi accumsan, sed euismod odio dapibus. Pellentesque pretium orci id turpis efficitur dictum. Etiam vitae augue velit. Sed auctor tellus dui, a eleifend mi vehicula nec. Phasellus sagittis ut augue nec rhoncus. Sed sagittis tincidunt mi, non malesuada purus interdum quis. Etiam porttitor neque non augue aliquam, venenatis finibus sem ultricies. Etiam et leo accumsan libero porta dictum. Nulla mollis rutrum urna id laoreet. Proin ut porta enim. Nullam sagittis enim libero, id sodales lacus malesuada eu. Suspendisse sed mauris et nunc commodo porttitor.
-
-
+                  Praesent egestas ligula quis mi accumsan, sed euismod odio dapibus. Pellentesque pretium orci id turpis efficitur dictum. Etiam vitae augue velit. Sed auctor tellus dui, a eleifend mi vehicula nec. Phasellus sagittis ut augue nec rhoncus. Sed sagittis tincidunt mi, non malesuada purus interdum quis. Etiam porttitor neque non augue aliquam, venenatis finibus sem ultricies. Etiam et leo accumsan libero porta dictum. Nulla mollis rutrum urna id laoreet. Proin ut porta enim. Nullam sagittis enim libero, id sodales lacus malesuada eu. Suspendisse sed mauris et nunc commodo porttitor.
               </Typography>
             </CardContent>
             <CardActions className={classes.cardContent}>
@@ -110,7 +110,7 @@ Praesent egestas ligula quis mi accumsan, sed euismod odio dapibus. Pellentesque
           </Card>
           <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" className={classes.pos} >
                 Project 3
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
@@ -130,7 +130,7 @@ Praesent egestas ligula quis mi accumsan, sed euismod odio dapibus. Pellentesque
           </Card>
           <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" className={classes.pos} >
                 Project 4
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
@@ -150,7 +150,7 @@ Praesent egestas ligula quis mi accumsan, sed euismod odio dapibus. Pellentesque
           </Card>
           <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" className={classes.pos} >
                 Project 5
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
@@ -170,7 +170,7 @@ Praesent egestas ligula quis mi accumsan, sed euismod odio dapibus. Pellentesque
           </Card>
           <Card className={classes.card}>
             <CardContent className={classes.cardContent}>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h5" component="h2" className={classes.pos} >
                   Project 6
                 </Typography>
                 <Typography className={classes.pos} color="textSecondary">

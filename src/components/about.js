@@ -24,6 +24,7 @@ const useStyles = makeStyles({
   },
   text: {
     marginBottom: "1rem",
+    fontFamily: "Roboto",
   },
   cardContainer: {
     display: "flex",
@@ -44,14 +45,14 @@ const useStyles = makeStyles({
     }
   },
   cardTitle: {
-    fontFamily: "Fjalla one",
+    fontFamily: "Roboto",
     fontSize: "2.2rem"
   },
   cardText: {
-    fontFamily: "Fjalla one",
+    fontFamily: "Roboto",
   },
   button: {
-    fontFamily: "Fjalla one",
+    fontFamily: "Roboto",
     '&:hover': {
       transitionDelay: "100ms",
       transitionTimingFunction: "ease-in-out",

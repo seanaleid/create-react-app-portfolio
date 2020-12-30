@@ -7,6 +7,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import colors from "./colors.js";
+
+// import {useDarkMode} from "../hooks/useDarkMode.js";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -31,8 +34,9 @@ ElevationScroll.propTypes = {
 
 const useStyles = makeStyles({
   bar: {
-    background: "#FAFAFA",
+    background: 'rgba(250,250,250,1)',
     display: "flex",
+    boxShadow: 'none',
   },
   toolbar: {
     display: "flex",
@@ -51,6 +55,7 @@ const useStyles = makeStyles({
     color: "#708090",
     textDecoration: "none",
     paddingLeft: "10px",
+    fontFamily: 'Roboto',
     "&:hover": {
       borderBottom: "3px solid #FC6E22",
 
@@ -58,15 +63,34 @@ const useStyles = makeStyles({
       fontWeight: "600",
     },
   },
+  btn: {
+    marginLeft: "20px",
+    color: "#708090",
+    textDecoration: "none",
+    minWidth: "40px",
+    border: "none",
+    backgroundColor: "#FAFAFA",
+    fontSize: "2rem",
+  }
 });
 
 export default function ElevateAppBar(props) {
+  // const [darkMode, setDarkMode] = useDarkMode('Dark Mode', false);
+  // const toggleMode = e => {
+  //     e.preventDefault();
+  //     setDarkMode(!darkMode);
+  // };
+  
   const classes = useStyles();
+  console.log(colors[0]);
+
+  // const lightMoon = <span role="img" aria-label="light mode moon emoji">🌝</span>;
+  // const darkMoon = <span role="img" aria-label="dark mode moon emoji">🌚</span>
   return (
     <>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar className={classes.bar}>
+        <AppBar className={classes.bar} >
           <Toolbar className={classes.toolbar}>
             <Typography variant="h6" className={classes.text}>
               <Link to="/" className={classes.linkText}>
@@ -89,6 +113,7 @@ export default function ElevateAppBar(props) {
                   Contact
                 </Link>
               </Typography>
+              {/* <button onClick={toggleMode} className={classes.btn}>{ darkMode ? lightMoon : darkMoon }</button> */}
             </Toolbar>
           </Toolbar>
         </AppBar>
