@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
@@ -13,9 +14,8 @@ const useStyles = makeStyles({
     bottom: "0px"
   },
   title: {
-    color: "#708090",
     fontWeight: "400",
-    fontFamily: "Fjalla one",
+    fontFamily: 'Roboto', 
     marginTop: "3rem",
     marginBottom: "3rem",
     position: "relative",
@@ -24,18 +24,22 @@ const useStyles = makeStyles({
   },
 });
 
-const Footer = () => {
+const Footer = ({colors}) => {
 const classes = useStyles();
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Typography variant="h6" className={classes.title}>
+        <Typography variant="h6" className={classes.title} style={{color: `${colors.text}`}}>
           Sean Naleid &#169; 2020
         </Typography>
       </Container>
     </React.Fragment>
   );
 };
+
+Footer.propTypes = {
+  colors: PropTypes.object,
+}
 
 export default Footer;
 

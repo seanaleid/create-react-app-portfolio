@@ -18,5 +18,6 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "no-unused-vars": ["error", { "vars": "local", "args": "none", "ignoreRestSiblings": false }]
     }
 };
