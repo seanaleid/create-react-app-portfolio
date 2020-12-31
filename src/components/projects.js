@@ -38,8 +38,17 @@ const useStyles = makeStyles({
       boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
     }
   },
-  image: {
+  image1: {
     background: `url(https://kobalt-pics.s3.amazonaws.com/developer/Screen+Recording+2020-12-30+at+10.58.03+PM.gif)`,
+    backgroundOrigin: "content-box",
+    backgroundSize: "100% auto",
+    position: "right",
+    width: "100%",
+    height: "400px",
+    marginBottom: "1rem",
+  },
+  image2: {
+    background: `url(https://kobalt-pics.s3.amazonaws.com/developer/seans-game-of-life.gif)`,
     backgroundOrigin: "content-box",
     backgroundSize: "100% auto",
     position: "right",
@@ -83,7 +92,7 @@ const Projects = ({colors}) => {
               <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
                 NASA API Key
               </Typography>
-              <div className={classes.image}></div>
+              <div className={classes.image1}></div>
               <Typography className={classes.pos} style={{color:`${colors.text}`}}>
               The purpose of this project is to showcase NASA&#39;s Picture of the Day. Therefore, I have prioritized the image set to the background by making the calendar and accompanying description almost completely see-through. You can read the text by moving the mouse over the text.
               </Typography>
@@ -129,16 +138,18 @@ const Projects = ({colors}) => {
           <Card className={classes.card}>
             <CardContent style={{ backgroundColor: `${colors.body}`}}>
               <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
-                Project 2
+                Computer Science - Conway&#39;s Game of Life
               </Typography>
+              <div className={classes.image2}></div>
               <Typography className={classes.pos} style={{color:`${colors.text}`}}>
-                  Praesent egestas ligula quis mi accumsan, sed euismod odio dapibus. Pellentesque pretium orci id turpis efficitur dictum. Etiam vitae augue velit. Sed auctor tellus dui, a eleifend mi vehicula nec. Phasellus sagittis ut augue nec rhoncus. Sed sagittis tincidunt mi, non malesuada purus interdum quis. Etiam porttitor neque non augue aliquam, venenatis finibus sem ultricies. Etiam et leo accumsan libero porta dictum. Nulla mollis rutrum urna id laoreet. Proin ut porta enim. Nullam sagittis enim libero, id sodales lacus malesuada eu. Suspendisse sed mauris et nunc commodo porttitor.
+                Sean&#39;s Game of Life is an implementation of John Horton Conway&#39;s Game of Life written in React. This version of Conway&#39;s Game of Life takes advantage of hooks to handle state for the app. In the project, I apply Immer&#39;s built-in default function, &#39;produce&#39;, to manage double-buffering when the grid switches from one generation to another.
+                Additionally, each generation is saved in a cache so that a player can easily view previous boards after the animation has started and been paused.
               </Typography>
             </CardContent>
             <CardActions style={{ backgroundColor: `${colors.body}`}}>
               <Button
                 size="small"
-                href="#"
+                href="https://seans-game-of-life.netlify.app/"
                 id="project2"
                 target="_blank"
                 rel="noreferrer"
@@ -151,6 +162,22 @@ const Projects = ({colors}) => {
                 }} 
               >
                 Visit Site
+              </Button>
+              <Button
+                size="small"
+                href="https://github.com/seanaleid/cs-build-week-1"
+                id="project1Code"
+                target="_blank"
+                rel="noreferrer"
+                className={classes.button}
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  color: (hover && hoverId === "project1Code" ? `${colors.hoverText}` : `${colors.text}`),
+                  backgroundColor: (hover &&  hoverId === "project1Code"? `${colors.projects}` : `${colors.body}`),
+                }} 
+              >
+                View Code
               </Button>
             </CardActions>
           </Card>
