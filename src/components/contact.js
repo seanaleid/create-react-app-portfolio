@@ -27,7 +27,6 @@ const useStyles = makeStyles({
     margin: "3rem",
     width: "8rem",
     height: "8rem",
-    backgroundColor: "#c24cf6",
     "&:hover": {
       cursor: "pointer",
       boxShadow: "0px 18px 14px -14px rgba(0,0,0,0.2), 0px 14px 14px 0px rgba(0,0,0,0.14), 0px 14px 12px 0px rgba(0,0,0,0.12)",
@@ -36,7 +35,6 @@ const useStyles = makeStyles({
   icon: {
     width: "6rem",
     height: "6rem",
-    color: "#FAFAFA"
   }
 });
 
@@ -49,7 +47,7 @@ const Contact = ({colors}) => {
           Contact
         </Typography>
         <Container className={classes.inside}>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
             <a 
               href="mailto:seanaleid@gmail.com"
               target="_blank" 
@@ -58,7 +56,7 @@ const Contact = ({colors}) => {
               <MailOutlineOutlined className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
             <a 
               href="https://www.linkedin.com/in/sean-naleid"
               target="_blank" 
@@ -67,7 +65,7 @@ const Contact = ({colors}) => {
               <LinkedIn className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
             <a 
               href="https://www.github.com/seanaleid"
               target="_blank" 
@@ -76,7 +74,7 @@ const Contact = ({colors}) => {
               <GitHub className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
             <a 
               href="https://twitter.com/SeanNaleid"
               target="_blank" 
