@@ -38,8 +38,21 @@ const useStyles = makeStyles({
       boxShadow: "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
     }
   },
+  image: {
+    background: `url(https://kobalt-pics.s3.amazonaws.com/developer/Screen+Recording+2020-12-30+at+10.58.03+PM.gif)`,
+    backgroundOrigin: "content-box",
+    backgroundSize: "100% auto",
+    position: "right",
+    width: "100%",
+    height: "400px",
+    marginBottom: "1rem",
+  },
+  link: {
+    textDecoration: "none",
+  },
   pos: {
     fontFamily: "Roboto",
+    marginBottom: "1rem",
   },
   button: {
     fontFamily: "Roboto",
@@ -68,18 +81,23 @@ const Projects = ({colors}) => {
           <Card className={classes.card}>
             <CardContent style={{ backgroundColor: `${colors.body}`}}>
               <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
-                Project 1 
+                NASA API Key
+              </Typography>
+              <div className={classes.image}></div>
+              <Typography className={classes.pos} style={{color:`${colors.text}`}}>
+              The purpose of this project is to showcase NASA&#39;s Picture of the Day. Therefore, I have prioritized the image set to the background by making the calendar and accompanying description almost completely see-through. You can read the text by moving the mouse over the text.
               </Typography>
               <Typography className={classes.pos} style={{color:`${colors.text}`}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum gravida auctor. In congue mollis lorem non sollicitudin. Duis efficitur imperdiet laoreet. Etiam pretium ac mi imperdiet consectetur. Nam varius lorem purus. Duis aliquam ipsum et lorem mattis vestibulum. Mauris fermentum sagittis est, eget pellentesque libero mattis tempus. Proin vel magna quis odio consectetur finibus.
+              NASA has provided software engineers various Application Programming Interfaces (APIs) to practice with. In order to gain access to these APIs, we must request a unique API key. With this key, we make a request to the API and in the response, we receive an object that has the image, title, description, credit, etc. Through some basic JavaScript and CSS, I have taken the image that comes in the response and set it to the background. This specific API has images stored for every day of the year going all the way back to July 16th, 1995.
               </Typography>
             </CardContent>
             <CardActions style={{ backgroundColor: `${colors.body}`}}>
               <Button
                 size="small"
-                href="#"
+                href="https://nasa-apikey.netlify.app/"
                 id="project1"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
@@ -92,9 +110,10 @@ const Projects = ({colors}) => {
               </Button>
               <Button
                 size="small"
-                href="#"
+                href="https://github.com/WEB27-practice/NASA-API-Photos"
                 id="project1Code"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
@@ -122,6 +141,7 @@ const Projects = ({colors}) => {
                 href="#"
                 id="project2"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
@@ -149,6 +169,7 @@ const Projects = ({colors}) => {
                 href="#"
                 id="project3"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
@@ -176,6 +197,7 @@ const Projects = ({colors}) => {
                 href="#"
                 id="project4"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
@@ -203,6 +225,7 @@ const Projects = ({colors}) => {
                 href="#"
                 id="project5"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
@@ -230,6 +253,7 @@ const Projects = ({colors}) => {
                 href="#"
                 id="project6"
                 target="_blank"
+                rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
