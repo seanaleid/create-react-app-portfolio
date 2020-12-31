@@ -166,15 +166,15 @@ const Projects = ({colors}) => {
               <Button
                 size="small"
                 href="https://github.com/seanaleid/cs-build-week-1"
-                id="project1Code"
+                id="project2Code"
                 target="_blank"
                 rel="noreferrer"
                 className={classes.button}
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
                 style={{
-                  color: (hover && hoverId === "project1Code" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "project1Code"? `${colors.projects}` : `${colors.body}`),
+                  color: (hover && hoverId === "project2Code" ? `${colors.hoverText}` : `${colors.text}`),
+                  backgroundColor: (hover &&  hoverId === "project2Code"? `${colors.projects}` : `${colors.body}`),
                 }} 
               >
                 View Code
