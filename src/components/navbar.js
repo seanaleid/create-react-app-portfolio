@@ -34,7 +34,7 @@ ElevationScroll.propTypes = {
 const useStyles = makeStyles({
   bar: {
     display: "flex",
-    boxShadow: 'none',
+    // boxShadow: 'none',
   },
   toolbar: {
     display: "flex",
@@ -73,10 +73,10 @@ export default function ElevateAppBar(props) {
   //     e.preventDefault();
   //     setDarkMode(!darkMode);
   // };
-  const [homeHover, setHomeHover] = useState(false)
-  const [aboutHover, setAboutHover] = useState(false)
-  const [projectsHover, setProjectsHover] = useState(false)
-  const [contactHover, setContactHover] = useState(false)
+  
+  const [hover, setHover] = useState(false);
+  const [hoverId, setHoverId] = useState(null);
+
   const classes = useStyles();
   const {colors} = props;
 
@@ -91,11 +91,12 @@ export default function ElevateAppBar(props) {
             <Typography variant="h6" className={classes.text}>
               <Link to="/" 
                 className={classes.linkText} 
-                onMouseEnter={() => {setHomeHover(true)}}
-                onMouseLeave={() => {setHomeHover(false)}}
+                id="home"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
                 style={{
-                  color: (homeHover ? `${colors.highlight}` : `${colors.text}`),
-                  borderBottom: (homeHover ? `${colors.border}` : null),
+                  color: (hover && hoverId === 'home' ? `${colors.highlight}` : `${colors.text}`),
+                  borderBottom: (hover && hoverId === 'home' ? `${colors.border}` : null),
                 }} 
               >
                 Home
@@ -105,11 +106,12 @@ export default function ElevateAppBar(props) {
               <Typography variant="h6" className={classes.text}>
                 <Link to="/about" 
                   className={classes.linkText} 
-                  onMouseEnter={() => {setAboutHover(true)}}
-                  onMouseLeave={() => {setAboutHover(false)}}
+                  id="about"
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
                   style={{
-                    color: (aboutHover ? `${colors.highlight}` : `${colors.text}`),
-                    borderBottom: (aboutHover ? `${colors.border}` : null),
+                    color: (hover && hoverId === 'about' ? `${colors.highlight}` : `${colors.text}`),
+                    borderBottom: (hover && hoverId === 'about' ? `${colors.border}` : null),
                   }}   
                 >
                   About
@@ -118,12 +120,13 @@ export default function ElevateAppBar(props) {
               <Typography variant="h6" className={classes.text}>
                 <Link to="/projects" 
                   className={classes.linkText} 
-                  onMouseEnter={() => {setProjectsHover(true)}}
-                  onMouseLeave={() => {setProjectsHover(false)}}
+                  id="projects"
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
                   style={{
-                    color: (projectsHover ? `${colors.highlight}` : `${colors.text}`),
-                    borderBottom: (projectsHover ? `${colors.border}` : null),
-                  }} 
+                    color: (hover && hoverId === 'projects' ? `${colors.highlight}` : `${colors.text}`),
+                    borderBottom: (hover && hoverId === 'projects' ? `${colors.border}` : null),
+                  }}   
                 >
                   Projects
                 </Link>
@@ -131,12 +134,13 @@ export default function ElevateAppBar(props) {
               <Typography variant="h6" className={classes.text}>
                 <Link to="/contact" 
                   className={classes.linkText} 
-                  onMouseEnter={() => {setContactHover(true)}}
-                  onMouseLeave={() => {setContactHover(false)}}
+                  id="contact"
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
                   style={{
-                    color: (contactHover ? `${colors.highlight}` : `${colors.text}`),
-                    borderBottom: (contactHover ? `${colors.border}` : null),
-                  }} 
+                    color: (hover && hoverId === 'contact' ? `${colors.highlight}` : `${colors.text}`),
+                    borderBottom: (hover && hoverId === 'contact' ? `${colors.border}` : null),
+                  }}
                 >
                   Contact
                 </Link>

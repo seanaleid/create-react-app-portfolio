@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
 import {Typography} from "@material-ui/core";
@@ -18,7 +19,6 @@ const useStyles = makeStyles({
     justifyContent: "center",
   },
   title: {
-    color: "#c24cf6",
     fontWeight: "bold",
     fontFamily: "Fjalla one",
     marginBottom: "3rem",
@@ -40,49 +40,49 @@ const useStyles = makeStyles({
   }
 });
 
-const Contact = () => {
+const Contact = ({colors}) => {
   const classes = useStyles();
   return (
     <>
       <Container className={classes.box}>
-        <Typography variant="h1" className={classes.title}>
+        <Typography variant="h1" className={classes.title} style={{color: `${colors.contact}`}}>
           Contact
         </Typography>
         <Container className={classes.inside}>
-          <Avatar className={classes.avatar}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
             <a 
               href="mailto:seanaleid@gmail.com"
               target="_blank" 
               rel="noreferrer"
             >
-              <MailOutlineOutlined className={classes.icon}/>
+              <MailOutlineOutlined className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
-          <Avatar className={classes.avatar}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
             <a 
               href="https://www.linkedin.com/in/sean-naleid"
               target="_blank" 
               rel="noreferrer"
             >
-              <LinkedIn className={classes.icon}/>
+              <LinkedIn className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
-          <Avatar className={classes.avatar}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
             <a 
               href="https://www.github.com/seanaleid"
               target="_blank" 
               rel="noreferrer"
             >
-              <GitHub className={classes.icon}/>
+              <GitHub className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
-          <Avatar className={classes.avatar}>
+          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.contact}`}}>
             <a 
               href="https://twitter.com/SeanNaleid"
               target="_blank" 
               rel="noreferrer"
             >
-              <Twitter className={classes.icon}/>
+              <Twitter className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
           
@@ -90,6 +90,10 @@ const Contact = () => {
       </Container>
     </>
   )
+}
+
+Contact.propTypes = {
+  colors: PropTypes.object,
 }
 
 export default Contact;

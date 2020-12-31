@@ -22,21 +22,20 @@ function App() {
   }, [colors])
 
   const handleChangeColors = () => {
-    let num = Math.floor(Math.random()*Math.floor(2));
+    let num = Math.floor(Math.random()*Math.floor(11));
     setColors(colorz[num])
   }
 
   return (
     <div className="App" onClick={handleChangeColors}>
-      <Navbar colors={colors} />
+      <Navbar colors={colors}/>
       <Switch>
-        {/* <Route exact path="/" component={Home} colors={colors}/> */}
         <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
-        <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/contact" component={Contact} />
+        <Route path="/about" render={props => <About {...props} colors={colors}/>}/>
+        <Route path="/projects" render={props => <Projects {...props} colors={colors}/>}/>
+        <Route path="/contact" render={props => <Contact {...props} colors={colors}/>}/>
       </Switch>
-      <Footer />
+      <Footer colors={colors}/>
     </div>
   );
 }
