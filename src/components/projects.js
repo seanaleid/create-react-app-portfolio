@@ -59,9 +59,20 @@ const useStyles = makeStyles({
   link: {
     textDecoration: "none",
   },
+  bottom:{
+    justifyContent: "space-between",
+  },
   pos: {
     fontFamily: "Roboto",
     marginBottom: "1rem",
+    textAlign: "justify",
+  },
+  role: {
+    fontFamily: "Roboto",
+    fontWeight: "1000",
+    display: "flex",
+    justifyContent: "flex-end",
+    width: "300px",
   },
   button: {
     fontFamily: "Roboto",
@@ -100,39 +111,44 @@ const Projects = ({colors}) => {
               NASA has provided software engineers various Application Programming Interfaces (APIs) to practice with. In order to gain access to these APIs, we must request a unique API key. With this key, we make a request to the API and in the response, we receive an object that has the image, title, description, credit, etc. Through some basic JavaScript and CSS, I have taken the image that comes in the response and set it to the background. This specific API has images stored for every day of the year going all the way back to July 16th, 1995.
               </Typography>
             </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="https://nasa-apikey.netlify.app/"
-                id="project1"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === "project1" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "project1"? `${colors.projects}` : `${colors.body}`),
-                }} 
-              >
-                Visit Site
-              </Button>
-              <Button
-                size="small"
-                href="https://github.com/WEB27-practice/NASA-API-Photos"
-                id="project1Code"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === "project1Code" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "project1Code"? `${colors.projects}` : `${colors.body}`),
-                }} 
-              >
-                View Code
-              </Button>
+            <CardActions style={{ backgroundColor: `${colors.body}`}} className={classes.bottom}>
+              <div>
+                <Button
+                  size="small"
+                  href="https://nasa-apikey.netlify.app/"
+                  id="project1"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.button}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "project1" ? `${colors.hoverText}` : `${colors.text}`),
+                    backgroundColor: (hover &&  hoverId === "project1"? `${colors.projects}` : `${colors.body}`),
+                  }} 
+                >
+                  Visit Site
+                </Button>
+                <Button
+                  size="small"
+                  href="https://github.com/WEB27-practice/NASA-API-Photos"
+                  id="project1Code"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.button}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "project1Code" ? `${colors.hoverText}` : `${colors.text}`),
+                    backgroundColor: (hover &&  hoverId === "project1Code"? `${colors.projects}` : `${colors.body}`),
+                  }} 
+                >
+                  View Code
+                </Button>
+              </div>
+              <Typography variant="h7" className={classes.role} style={{color:`${colors.text}`}}>
+                ROLE: Coder and Designer
+              </Typography>
             </CardActions>
           </Card>
           <Card className={classes.card}>
@@ -146,39 +162,44 @@ const Projects = ({colors}) => {
                 Additionally, each generation is saved in a cache so that a player can easily view previous boards after the animation has started and been paused.
               </Typography>
             </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="https://seans-game-of-life.netlify.app/"
-                id="project2"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === "project2" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "project2"? `${colors.projects}` : `${colors.body}`),
-                }} 
-              >
-                Visit Site
-              </Button>
-              <Button
-                size="small"
-                href="https://github.com/seanaleid/cs-build-week-1"
-                id="project2Code"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === "project2Code" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "project2Code"? `${colors.projects}` : `${colors.body}`),
-                }} 
-              >
-                View Code
-              </Button>
+            <CardActions style={{ backgroundColor: `${colors.body}`}} className={classes.bottom}>
+              <div>
+                <Button
+                  size="small"
+                  href="https://seans-game-of-life.netlify.app/"
+                  id="project2"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.button}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "project2" ? `${colors.hoverText}` : `${colors.text}`),
+                    backgroundColor: (hover &&  hoverId === "project2"? `${colors.projects}` : `${colors.body}`),
+                  }} 
+                >
+                  Visit Site
+                </Button>
+                <Button
+                  size="small"
+                  href="https://github.com/seanaleid/cs-build-week-1"
+                  id="project2Code"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.button}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "project2Code" ? `${colors.hoverText}` : `${colors.text}`),
+                    backgroundColor: (hover &&  hoverId === "project2Code"? `${colors.projects}` : `${colors.body}`),
+                  }} 
+                >
+                  View Code
+                </Button>
+              </div>
+              <Typography variant="h7" className={classes.role} style={{color:`${colors.text}`}}>
+                ROLE: Coder and Designer
+              </Typography>
             </CardActions>
           </Card>
           <Card className={classes.card}>
