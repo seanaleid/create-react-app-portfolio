@@ -67,7 +67,15 @@ const useStyles = makeStyles({
       transitionDelay: "100ms",
       transitionTimingFunction: "ease-in-out",
     } 
-  }
+  },
+  linkText: {
+    textDecoration: "none",
+    paddingLeft: "5px",
+    fontFamily: 'Roboto',
+    "&:hover": {
+      fontWeight: "600",
+    },
+  },
 });
 
 const About = ({colors}) => {
@@ -83,10 +91,25 @@ const About = ({colors}) => {
           About
         </Typography>
         <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
-          I currently live in the Washington DC area. I come from a linguistics and education background. I combine my almost 10 years of experience of teaching English to Speakers of other Languages (ESOL), Coaching, Translation, Team Building, and Teacher Training into my current role as Chief Technology Officer at Nuclius.
+          I currently live in the Washington DC area. I come from linguistics and education backgrounds. I combine my 10 years of experience of teaching English to Speakers of other Languages (ESOL), coaching, translation, team building, and teacher training into my current role as Chief Technology Officer at 
+            <a 
+              href="https://nuclius.com/" 
+              id="nuclius"
+              target="_blank"
+              rel="noreferrer"
+              className={classes.linkText}
+              onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+              onMouseLeave={() => {setHover(false)}}
+              style={{
+                color: (hover && hoverId === "nuclius" ? `${colors.highlight}` : `${colors.text}`),
+                textDecoration: (hover && hoverId === "nuclius" ? 'underline' : null),
+              }} 
+            >
+              Nuclius
+            </a>.
         </Typography>
         <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
-        My interest in web development sparked in a graduate translation class in Barcelona, Spain. Translating code related material comes with many difficulties due to the way that code is written. I was inspired to apply my linguistic and pedagogical experience to the coding world and offer a different point of view when writing code, mainly focusing on the user and how they will interact with the UI. I am passionate about clean design and accessible products for all. 
+        My interest in web development sparked in a graduate translation class in Barcelona, Spain. Translating code related material comes with many difficulties due to the way that code is written. I was inspired to apply my linguistic and pedagogical experience to the coding world and offer a different point of view when writing code, mainly focusing on the user and how they will interact with the user interface. I am passionate about clean design and accessible products for everyone. 
         </Typography>
         <Typography variant="h2" className={classes.title} style={{ color: `${colors.about}`}}>
           Recommendations

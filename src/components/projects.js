@@ -56,8 +56,25 @@ const useStyles = makeStyles({
     height: "400px",
     marginBottom: "1rem",
   },
+  image3: {
+    background: `url(https://kobalt-pics.s3.amazonaws.com/developer/Replate.gif)`,
+    backgroundOrigin: "content-box",
+    backgroundSize: "100% auto",
+    position: "right",
+    width: "100%",
+    height: "400px",
+    marginBottom: "1rem",
+  },
   link: {
     textDecoration: "none",
+  },
+  linkText: {
+    textDecoration: "none",
+    paddingLeft: "5px",
+    fontFamily: 'Roboto',
+    "&:hover": {
+      fontWeight: "600",
+    },
   },
   bottom:{
     justifyContent: "space-between",
@@ -158,8 +175,7 @@ const Projects = ({colors}) => {
               </Typography>
               <div className={classes.image2}></div>
               <Typography className={classes.pos} style={{color:`${colors.text}`}}>
-                Sean&#39;s Game of Life is an implementation of John Horton Conway&#39;s Game of Life written in React. This version of Conway&#39;s Game of Life takes advantage of hooks to handle state for the app. In the project, I apply Immer&#39;s built-in default function, &#39;produce&#39;, to manage double-buffering when the grid switches from one generation to another.
-                Additionally, each generation is saved in a cache so that a player can easily view previous boards after the animation has started and been paused.
+                Sean&#39;s Game of Life is an implementation of John Horton Conway&#39;s Game of Life written in React. This version of Conway&#39;s Game of Life takes advantage of hooks to handle state for the app. In the project, I apply Immer&#39;s built-in default function, &#39;produce&#39;, to manage double-buffering when the grid switches from one generation to another. Additionally, each generation is saved in a cache so that a player can easily view previous boards after the animation has started and been paused.
               </Typography>
             </CardContent>
             <CardActions style={{ backgroundColor: `${colors.body}`}} className={classes.bottom}>
@@ -205,32 +221,85 @@ const Projects = ({colors}) => {
           <Card className={classes.card}>
             <CardContent style={{ backgroundColor: `${colors.body}`}}>
               <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
-                Project 3
+                Replate
               </Typography>
+              <div className={classes.image3}></div>
               <Typography className={classes.pos} style={{color:`${colors.text}`}}>
-              Vivamus bibendum, felis ac gravida consectetur, dui turpis dapibus erat, nec tristique augue quam at dui. Vestibulum non elit sapien. Nunc sit amet posuere mauris. Maecenas elementum pellentesque eleifend. In blandit augue quis euismod sollicitudin. Fusce vitae ante a tortor tempus hendrerit. Morbi vel elementum erat. Curabitur nec quam maximus, pellentesque eros sit amet, consectetur turpis. Cras mollis leo at dolor semper, ut laoreet est gravida. Ut ac efficitur nibh. Ut finibus nunc velit, eu tincidunt arcu cursus quis. In vel purus turpis. Etiam lorem lectus, aliquet vitae tellus vitae, mattis ultrices mauris. Integer blandit ante diam, eu tincidunt est pulvinar et. Fusce nec viverra ex. Praesent vehicula odio nunc, a fringilla sapien finibus vitae.
+                Replate was a Build Week project while I was a Team Lead at Lambda. Build Week brings together a cross functional team of students to build a project. To successfully complete the week long challenge, Replate required a 
+                <a 
+                  href="https://nuclius.com/" 
+                  id="frontend"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.linkText}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "frontend" ? `${colors.highlight}` : `${colors.text}`),
+                    textDecoration: (hover && hoverId === "frontend" ? 'underline' : null),
+                  }} 
+                >
+                  frontend,
+                </a> 
+                &nbsp;backend, and 
+                <a 
+                  href="https://replate-build-week.netlify.app/index.html" 
+                  id="marketing"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.linkText}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "marketing" ? `${colors.highlight}` : `${colors.text}`),
+                    textDecoration: (hover && hoverId === "marketing" ? 'underline' : null),
+                  }} 
+                >
+                  marketing site
+                </a>. My role as project manager was to identify the tasks and help the full stack developers complete them within the deadline. 
               </Typography>
             </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="#"
-                id="project3"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === "project3" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "project3"? `${colors.projects}` : `${colors.body}`),
-                }} 
-              >
-                Visit Site
-              </Button>
+            <CardActions style={{ backgroundColor: `${colors.body}`}} className={classes.bottom}>
+              <div>
+                <Button
+                  size="small"
+                  href="https://replate-seven.now.sh/"
+                  id="project3"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.button}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "project3" ? `${colors.hoverText}` : `${colors.text}`),
+                    backgroundColor: (hover &&  hoverId === "project3"? `${colors.projects}` : `${colors.body}`),
+                  }} 
+                >
+                  Visit Site
+                </Button>
+                <Button
+                  size="small"
+                  href="https://github.com/Replate1"
+                  id="project3Code"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.button}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    color: (hover && hoverId === "project3Code" ? `${colors.hoverText}` : `${colors.text}`),
+                    backgroundColor: (hover &&  hoverId === "project3Code"? `${colors.projects}` : `${colors.body}`),
+                  }} 
+                >
+                  View Code
+                </Button>
+              </div>
+              <Typography variant="h7" className={classes.role} style={{color:`${colors.text}`}}>
+                ROLE: Project Manager
+              </Typography>
             </CardActions>
           </Card>
-          <Card className={classes.card}>
+          {/* <Card className={classes.card}>
             <CardContent style={{ backgroundColor: `${colors.body}`}}>
               <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
                 Project 4
@@ -313,7 +382,7 @@ const Projects = ({colors}) => {
                 Visit Site
               </Button>
             </CardActions>
-          </Card>
+          </Card> */}
         </Container>
       </Container>
     </React.Fragment>
