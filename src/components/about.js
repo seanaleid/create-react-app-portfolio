@@ -26,6 +26,7 @@ const useStyles = makeStyles({
   text: {
     marginBottom: "1rem",
     fontFamily: "Roboto",
+    textAlign: "justify",
   },
   cardContainer: {
     display: "flex",
@@ -57,6 +58,7 @@ const useStyles = makeStyles({
   },
   cardText: {
     fontFamily: "Roboto",
+    textAlign: "justify",
   },
   button: {
     fontFamily: "Roboto",
