@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#FAFAFA",
     fontSize: "2rem",
   },
-  closeIcon: {
+  icon: {
     height: "3rem",
     width: "3rem"
   }
@@ -219,7 +219,7 @@ const ElevateAppBar = (props) => {
               borderBottom: (hover && hoverId === 'menuIcon' ? `${colors.border}` : null),
             }} 
           >
-            <MenuIcon />
+            <MenuIcon className={classes.icon}/>
           </IconButton>
         </Toolbar>
         <Drawer
@@ -235,16 +235,16 @@ const ElevateAppBar = (props) => {
               onClick={handleDrawerClose} 
               style={{color:`${colors.text}`, background: `${colors.body}`}}
             >
-              <CloseIcon className={classes.closeIcon}/>
+              <CloseIcon className={classes.icon}/>
             </IconButton>
           </div>
           
           <List style={{background: `${colors.body}`, height: "100%"}}>
-            {['About', 'Projects', 'Contact'].map((text, index) => (
+            {['Home', 'About', 'Projects', 'Contact'].map((text, index) => (
               <ListItem button key={text} style={{ color: `${colors.projects}`}}>
                 {/* <ListItemText primary={text} className={classes.}/> */}
                 <Typography variant="h2" className={classes.text}>
-                  <Link to={text === "home" ? "/" : `/${text}` }
+                  <Link to={text === "Home" ? "/" : `/${text.toLowerCase()}` }
                       className={classes.linkText} 
                       id={text}
                       onClick={handleDrawerClose}

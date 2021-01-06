@@ -11,7 +11,8 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     position: "realtive",
-    bottom: "0px"
+    bottom: "0px",
+    marginBottom: "1rem"
   },
   title: {
     fontWeight: "400",
