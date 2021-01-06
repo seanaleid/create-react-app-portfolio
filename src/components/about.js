@@ -8,6 +8,8 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import LinkedIn from '@material-ui/icons/LinkedIn';
+import Hidden from '@material-ui/core/Hidden';
+import withWidth from '@material-ui/core/withWidth';
 
 const useStyles = makeStyles({
   box: {
@@ -20,6 +22,14 @@ const useStyles = makeStyles({
     marginTop: "3rem",
     marginBottom: "3rem",
   },
+  titleCenter: {
+    fontWeight: "bold",
+    fontFamily: "Fjalla one",
+    marginTop: "3rem",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
+  },
   subtitle: {
     marginBottom: "3rem",
   },
@@ -31,6 +41,7 @@ const useStyles = makeStyles({
   cardContainer: {
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "center",
     paddingBottom: "50px",
   },
   card: {
@@ -87,9 +98,12 @@ const About = ({colors}) => {
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Typography variant="h1" className={classes.title} style={{color:`${colors.about}`}}>
-          About
-        </Typography>
+        <Hidden smDown>
+          <Typography variant="h1" className={classes.title} style={{color:`${colors.about}`}}>About</Typography>
+        </Hidden>
+        <Hidden mdUp>
+          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.about}`}}>About</Typography>
+        </Hidden>
         <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
           I currently live in the Washington DC area. I come from linguistics and education backgrounds. I combine my 10 years of experience of teaching English to Speakers of other Languages (ESOL), coaching, translation, team building, and teacher training into my current role as Chief Technology Officer at 
             <a 
@@ -111,9 +125,12 @@ const About = ({colors}) => {
         <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
         My interest in web development sparked in a graduate translation class in Barcelona, Spain. Translating code related material comes with many difficulties due to the way that code is written. I was inspired to apply my linguistic and pedagogical experience to the coding world and offer a different point of view when writing code, mainly focusing on the user and how they will interact with the user interface. I am passionate about clean design and accessible products for everyone. 
         </Typography>
-        <Typography variant="h2" className={classes.title} style={{ color: `${colors.about}`}}>
-          Recommendations
-        </Typography>
+        <Hidden smDown>
+          <Typography variant="h2" className={classes.title} style={{ color: `${colors.about}`}}>Recommendations</Typography>
+        </Hidden>
+        <Hidden mdUp>
+          <Typography variant="h2" className={classes.titleCenter} style={{ color: `${colors.about}`}}>Recommendations</Typography>
+        </Hidden>
         <Container className={classes.cardContainer}>
           <Card className={classes.card}>
             <CardContent style={{ backgroundColor: `${colors.body}`}}>
@@ -331,6 +348,7 @@ const About = ({colors}) => {
 
 About.propTypes = {
   colors: PropTypes.object,
-}
+  width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
+};
 
-export default About;
+export default withWidth()(About);

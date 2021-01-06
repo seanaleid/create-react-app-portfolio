@@ -8,6 +8,8 @@ import GitHub from '@material-ui/icons/GitHub';
 import Twitter from '@material-ui/icons/Twitter';
 import MailOutlineOutlined from '@material-ui/icons/MailOutlineOutlined';
 import LinkedIn from '@material-ui/icons/LinkedIn';
+import Hidden from '@material-ui/core/Hidden';
+import withWidth from '@material-ui/core/withWidth';
 
 const useStyles = makeStyles({
   box: {
@@ -17,11 +19,20 @@ const useStyles = makeStyles({
   inside: {
     display: "flex",
     justifyContent: "center",
+    flexWrap: "wrap",
   },
   title: {
     fontWeight: "bold",
     fontFamily: "Fjalla one",
     marginBottom: "3rem",
+  },
+  titleCenter: {
+    fontWeight: "bold",
+    fontFamily: "Fjalla one",
+    marginTop: "3rem",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
   },
   avatar: {
     margin: "3rem",
@@ -43,9 +54,12 @@ const Contact = ({colors}) => {
   return (
     <>
       <Container className={classes.box}>
-        <Typography variant="h1" className={classes.title} style={{color: `${colors.contact}`}}>
-          Contact
-        </Typography>
+        <Hidden smDown>
+          <Typography variant="h1" className={classes.title} style={{color: `${colors.contact}`}}>Contact</Typography>
+        </Hidden>
+        <Hidden mdUp>
+          <Typography variant="h1" className={classes.titleCenter} style={{color: `${colors.contact}`}}>Contact</Typography>
+        </Hidden>
         <Container className={classes.inside}>
           <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
             <a 
@@ -83,7 +97,6 @@ const Contact = ({colors}) => {
               <Twitter className={classes.icon} style={{color: `${colors.body}`}}/>
             </a>
           </Avatar>
-          
         </Container>
       </Container>
     </>
@@ -92,6 +105,7 @@ const Contact = ({colors}) => {
 
 Contact.propTypes = {
   colors: PropTypes.object,
+  width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
 }
 
-export default Contact;
+export default withWidth()(Contact);
