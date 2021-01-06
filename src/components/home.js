@@ -55,7 +55,7 @@ const useStyles = makeStyles({
     marginLeft: "0.5rem"
   },
   hiddenTypewriter: {
-    fontSize: "2rem",
+    fontSize: "1.8rem",
     fontFamily: "Fjalla one",
     fontWeight: "1000",
     marginLeft: "0.5rem"
