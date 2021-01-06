@@ -25,6 +25,11 @@ const useStyles = makeStyles({
     fontWeight: "1000",
     fontFamily: "Fjalla one",
   },
+  hiddenTitle: {
+    fontWeight: "1000",
+    fontFamily: "Fjalla one",
+    fontSize: "1.8rem",
+  },
   name: {
     fontWeight: "1000",
     fontFamily: "Fjalla one",
@@ -114,7 +119,7 @@ const {colors} = props;
               Sean!</h1>
           </div>
           <div className={classes.hiddenInside}>
-            <Typography variant="h4" className={classes.title} style={{color: `${colors.home}`}}>
+            <Typography className={classes.hiddenTitle} style={{color: `${colors.home}`}}>
               I&#39;m   
             </Typography>
             {/* <TypeWriter/> */}
