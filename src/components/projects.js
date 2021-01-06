@@ -7,6 +7,8 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
+import Hidden from '@material-ui/core/Hidden';
+import withWidth from '@material-ui/core/withWidth';
 
 const useStyles = makeStyles({
   box: {
@@ -18,6 +20,14 @@ const useStyles = makeStyles({
     fontFamily: "Fjalla one",
     marginTop: "3rem",
     marginBottom: "3rem",
+  },
+  titleCenter: {
+    fontWeight: "bold",
+    fontFamily: "Fjalla one",
+    marginTop: "3rem",
+    marginBottom: "3rem",
+    display: "flex",
+    justifyContent: "center",
   },
   cardContainer: {
     display: "flex",
@@ -111,9 +121,12 @@ const Projects = ({colors}) => {
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Typography variant="h1" className={classes.title} style={{ color: `${colors.projects}`}}>
-          Projects
-        </Typography>
+        <Hidden smDown>
+          <Typography variant="h1" className={classes.title} style={{ color: `${colors.projects}`}}>Projects</Typography>
+        </Hidden>
+        <Hidden mdUp>
+          <Typography variant="h1" className={classes.titleCenter} style={{ color: `${colors.projects}`}}>Projects</Typography>
+        </Hidden>
         <Container className={classes.cardContainer}>
           <Card className={classes.card}>
             <CardContent style={{ backgroundColor: `${colors.body}`}}>
@@ -391,6 +404,7 @@ const Projects = ({colors}) => {
 
 Projects.propTypes = {
   colors: PropTypes.object,
+  width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
 }
 
-export default Projects;
+export default withWidth()(Projects);

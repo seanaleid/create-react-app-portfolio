@@ -12,9 +12,8 @@ import Contact from "./components/contact.js";
 import Footer from "./components/footer.js";
 
 function App() {
-  // console.log(colors);
   const [colors, setColors] = useState(colorz[0])
-  console.log("App colors", colors);
+  // console.log("App colors", colors);
 
   useEffect(() => {
     const body = document.querySelector('body');
