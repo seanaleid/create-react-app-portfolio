@@ -129,7 +129,7 @@ const About = ({colors}) => {
           <Typography variant="h2" className={classes.title} style={{ color: `${colors.about}`}}>Recommendations</Typography>
         </Hidden>
         <Hidden mdUp>
-          <Typography variant="h2" className={classes.titleCenter} style={{ color: `${colors.about}`}}>Recommendations</Typography>
+          <Typography variant="h3" className={classes.titleCenter} style={{ color: `${colors.about}`}}>Recommendations</Typography>
         </Hidden>
         <Container className={classes.cardContainer}>
           <Card className={classes.card}>
