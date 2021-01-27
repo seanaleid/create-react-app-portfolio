@@ -33,9 +33,7 @@ function App() {
       <Switch>
         <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
         <Route path="/about" render={props => <About {...props} colors={colors}/>}/>
-        <Route path="/work/projects" render={props => <Work {...props} colors={colors}/>}/>
-        {/* <Route path="/work/projects" render={props => <Projects {...props} colors={colors}/>}/>
-        <Route path="/work/designs" render={props => <Designs {...props} colors={colors}/>}/> */}
+        <Route path="/work" render={props => <Work {...props} colors={colors}/>}/>
         <Route path="/contact" render={props => <Contact {...props} colors={colors}/>}/>
       </Switch>
       <Footer colors={colors}/>

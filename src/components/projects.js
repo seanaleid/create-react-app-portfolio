@@ -175,7 +175,7 @@ const Projects = ({colors}) => {
                   View Code
                 </Button>
               </div>
-              <Typography variant="h7" className={classes.role} style={{color:`${colors.text}`}}>
+              <Typography variant="h6" className={classes.role} style={{color:`${colors.text}`}}>
                 ROLE: Coder and Designer
               </Typography>
             </CardActions>
@@ -225,7 +225,7 @@ const Projects = ({colors}) => {
                   View Code
                 </Button>
               </div>
-              <Typography variant="h7" className={classes.role} style={{color:`${colors.text}`}}>
+              <Typography variant="h6" className={classes.role} style={{color:`${colors.text}`}}>
                 ROLE: Coder and Designer
               </Typography>
             </CardActions>
@@ -306,7 +306,7 @@ const Projects = ({colors}) => {
                   View Code
                 </Button>
               </div>
-              <Typography variant="h7" className={classes.role} style={{color:`${colors.text}`}}>
+              <Typography variant="h6" className={classes.role} style={{color:`${colors.text}`}}>
                 ROLE: Project Manager
               </Typography>
             </CardActions>
