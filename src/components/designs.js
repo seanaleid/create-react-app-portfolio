@@ -44,21 +44,21 @@ const Designs = ({ colors }) => {
                 </CardContent>
           </Card>
           {/* <Card className={classes.card}>
-             <CardContent style={{ backgroundColor: `${colors.body}`}}>
-               <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
-                 NASA API Key
-               </Typography>
-               <div className={classes.image1}></div>
-               <Typography className={classes.pos} style={{color:`${colors.text}`}}>
-               The purpose of this project is to showcase NASA&#39;s Picture of the Day. Therefore, I have prioritized the image set to the background by making the calendar and accompanying description almost completely see-through. You can read the text by moving the mouse over the text.
-               </Typography>
-               <Typography className={classes.pos} style={{color:`${colors.text}`}}>
-               NASA has provided software engineers various Application Programming Interfaces (APIs) to practice with. In order to gain access to these APIs, we must request a unique API key. With this key, we make a request to the API and in the response, we receive an object that has the image, title, description, credit, etc. Through some basic JavaScript and CSS, I have taken the image that comes in the response and set it to the background. This specific API has images stored for every day of the year going all the way back to July 16th, 1995.
-               </Typography>
-             </CardContent>
-             <CardActions style={{ backgroundColor: `${colors.body}`}} className={classes.bottom}>
-               <div>
-                 <Button
+            <CardContent style={{ backgroundColor: `${colors.body}`}}>
+              <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
+                NASA API Key
+              </Typography>
+              <div className={classes.image1}></div>
+              <Typography className={classes.pos} style={{color:`${colors.text}`}}>
+              The purpose of this project is to showcase NASA&#39;s Picture of the Day. Therefore, I have prioritized the image set to the background by making the calendar and accompanying description almost completely see-through. You can read the text by moving the mouse over the text.
+              </Typography>
+              <Typography className={classes.pos} style={{color:`${colors.text}`}}>
+              NASA has provided software engineers various Application Programming Interfaces (APIs) to practice with. In order to gain access to these APIs, we must request a unique API key. With this key, we make a request to the API and in the response, we receive an object that has the image, title, description, credit, etc. Through some basic JavaScript and CSS, I have taken the image that comes in the response and set it to the background. This specific API has images stored for every day of the year going all the way back to July 16th, 1995.
+              </Typography>
+            </CardContent>
+            <CardActions style={{ backgroundColor: `${colors.body}`}} className={classes.bottom}>
+              <div>
+                <Button
                   size="small"
                   href="https://nasa-apikey.netlify.app/"
                   id="project1"
