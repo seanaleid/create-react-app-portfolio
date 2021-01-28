@@ -39,7 +39,7 @@ const Designs = ({ colors }) => {
           <Card className={classes.card}>
               <CardContent style={{ backgroundColor: `${colors.body}`}}>
                 <Typography variant="h5" className={classes.pos} style={{color:`${colors.text}`}}>
-                  UNDER CONSTRUCTION 
+                  UNDER CONSTRUCTION!!
                 </Typography>
                 </CardContent>
           </Card>
