@@ -170,17 +170,17 @@ const ElevateAppBar = (props) => {
                     </Link>
                   </Typography>
                   <Typography variant="h6" className={classes.text}>
-                    <Link to="/projects" 
+                    <Link to="/work/projects" 
                       className={classes.linkText} 
-                      id="projects"
+                      id="work"
                       onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                       onMouseLeave={() => {setHover(false)}}
                       style={{
-                        color: (hover && hoverId === 'projects' ? `${colors.highlight}` : `${colors.text}`),
-                        borderBottom: (hover && hoverId === 'projects' ? `${colors.border}` : null),
+                        color: (hover && hoverId === 'work' ? `${colors.highlight}` : `${colors.text}`),
+                        borderBottom: (hover && hoverId === 'work' ? `${colors.border}` : null),
                       }}   
                     >
-                      Projects
+                      Work
                     </Link>
                   </Typography>
                   <Typography variant="h6" className={classes.text}>
