@@ -10,6 +10,8 @@ import CardContent from "@material-ui/core/CardContent";
 // import Hidden from '@material-ui/core/Hidden';
 import withWidth from "@material-ui/core/withWidth";
 
+// UI challenge components
+
 const useStyles = makeStyles({
     box: {
     margin: "0 auto",
