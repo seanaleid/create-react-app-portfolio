@@ -63,7 +63,7 @@ const Contact = ({colors}) => {
         <Container className={classes.inside}>
           <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
             <a 
-              href="mailto:seanaleid@gmail.com"
+              href="mailto:seannaleidvargas@gmail.com"
               target="_blank" 
               rel="noreferrer"
             >
@@ -72,7 +72,7 @@ const Contact = ({colors}) => {
           </Avatar>
           <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
             <a 
-              href="https://www.linkedin.com/in/sean-naleid"
+              href="https://www.linkedin.com/in/sean-naleid-vargas/"
               target="_blank" 
               rel="noreferrer"
             >
