@@ -31,7 +31,7 @@ const classes = useStyles();
     <React.Fragment>
       <Container className={classes.box}>
         <Typography variant="h6" className={classes.title} style={{color: `${colors.text}`}}>
-          Sean Naleid &#169; 2020
+          Sean Naleid &#169; 2024
         </Typography>
       </Container>
     </React.Fragment>
