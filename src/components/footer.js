@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+//  
 
 const useStyles = makeStyles({
   box: {
@@ -30,9 +30,7 @@ const classes = useStyles();
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Typography variant="h6" className={classes.title} style={{color: `${colors.text}`}}>
-          Sean Naleid Vargas &#169; 2024
-        </Typography>
+        
       </Container>
     </React.Fragment>
   );

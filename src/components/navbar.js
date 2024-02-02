@@ -151,6 +151,20 @@ const ElevateAppBar = (props) => {
                         borderBottom: (hover && hoverId === 'home' ? `${colors.border}` : null),
                       }} 
                     >
+                      Sean Naleid Vargas &#169; 2024
+                    </Link>
+                  </Typography>
+                  <Typography variant="h6" className={classes.text}>
+                    <Link to="/" 
+                      className={classes.linkText} 
+                      id="home"
+                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                      onMouseLeave={() => {setHover(false)}}
+                      style={{
+                        color: (hover && hoverId === 'home' ? `${colors.highlight}` : `${colors.text}`),
+                        borderBottom: (hover && hoverId === 'home' ? `${colors.border}` : null),
+                      }} 
+                    >
                       Home
                     </Link>
                   </Typography>
@@ -251,7 +265,7 @@ const ElevateAppBar = (props) => {
                       onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                       onMouseLeave={() => {setHover(false)}}
                       style={{
-                        color: (hover && hoverId === {text} ? `${colors.highlight}` : `${colors.text}`),
+                        color: (hover && hoverId === text ? `${colors.highlight}` : `${colors.text}`),
                         borderBottom: (hover && hoverId === 'drawerNav' ? `${colors.border}` : null),
                       }} 
                   >

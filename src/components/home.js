@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import ReactRotatingText from "react-rotating-text";
+// import ReactRotatingText from "react-rotating-text";
 import PropTypes from "prop-types";
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
@@ -81,25 +81,15 @@ const {colors} = props;
               className={classes.title}
               style={{color: `${colors.home}`}}
             >
-              Hi, my name is 
+              NALEID VARGAS
             </Typography>
             <h1 
               className={classes.name} 
               style={{color: `${colors.home}`}}
             >
-              Sean!</h1>
+              Sean</h1>
           </div>
-          <div className={classes.inside}>
-            <Typography variant="h3" className={classes.title} style={{color: `${colors.home}`}}>
-              I&#39;m   
-            </Typography>
-            {/* <TypeWriter/> */}
-            <ReactRotatingText 
-              items={["a software developer.", "a project manager.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
-              className={classes.typewriter}
-              color={colors.home}
-            />
-          </div>
+          
         </Container>
       </Hidden>
       <Hidden mdUp>
@@ -110,25 +100,15 @@ const {colors} = props;
               className={classes.title}
               style={{color: `${colors.home}`}}
             >
-              Hi, my name is 
+              NALEID VARGAS
             </Typography>
             <h1 
               className={classes.hiddenName} 
               style={{color: `${colors.home}`}}
             >
-              Sean!</h1>
+              Sean</h1>
           </div>
-          <div className={classes.hiddenInside}>
-            <Typography className={classes.hiddenTitle} style={{color: `${colors.home}`}}>
-              I&#39;m   
-            </Typography>
-            {/* <TypeWriter/> */}
-            <ReactRotatingText 
-              items={["a software developer.", "a project manager.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
-              className={classes.hiddenTypewriter}
-              color={colors.home}
-            />
-          </div>
+
         </Container>
         <image src="./src/logo.svg"/>
       </Hidden>
