@@ -184,7 +184,7 @@ const ElevateAppBar = (props) => {
                     </Link>
                   </Typography>
                   <Typography variant="h6" className={classes.text}>
-                    <Link to="/work/projects" 
+                    <Link to="/projects" 
                       className={classes.linkText} 
                       id="work"
                       onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
@@ -194,11 +194,11 @@ const ElevateAppBar = (props) => {
                         borderBottom: (hover && hoverId === 'work' ? `${colors.border}` : null),
                       }}   
                     >
-                      Work
+                      Projects
                     </Link>
                   </Typography>
                   <Typography variant="h6" className={classes.text}>
-                    <Link to="/contact" 
+                    <Link to="/blog" 
                       className={classes.linkText} 
                       id="contact"
                       onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
@@ -208,7 +208,7 @@ const ElevateAppBar = (props) => {
                         borderBottom: (hover && hoverId === 'contact' ? `${colors.border}` : null),
                       }}
                     >
-                      Contact
+                      Blog
                     </Link>
                   </Typography>
                   {/* <button onClick={toggleMode} className={classes.btn}>{ darkMode ? lightMoon : darkMoon }</button> */}

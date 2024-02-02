@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
 import {makeStyles} from "@material-ui/core/styles";
-// import {Typography} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
+import Hidden from '@material-ui/core/Hidden';
 
 
 import withWidth from '@material-ui/core/withWidth';
@@ -50,7 +51,12 @@ const Contact = ({colors}) => {
   return (
     <>
       <Container className={classes.box}>
-        
+        <Hidden smDown>
+          <Typography variant="h1" className={classes.title} style={{color:`${colors.about}`}}>Blog</Typography>
+        </Hidden>
+        <Hidden mdUp>
+          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.about}`}}>Blog</Typography>
+        </Hidden>
       </Container>
     </>
   )

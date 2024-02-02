@@ -10,7 +10,7 @@ import withWidth from '@material-ui/core/withWidth';
 const useStyles = makeStyles({
   box: {
     margin: "0 auto",
-    maxWidth: "1000px",
+    maxWidth: "100vw",
   },
   titleTop: {
     display: "flex",
@@ -22,8 +22,8 @@ const useStyles = makeStyles({
     alignItems: "center"
   },
   title: {
-    fontWeight: "1000",
-    fontFamily: "Fjalla one",
+    fontWeight: "500",
+    fontFamily: "ValkyRegular",
   },
   hiddenTitle: {
     fontWeight: "1000",
@@ -32,13 +32,13 @@ const useStyles = makeStyles({
   },
   name: {
     fontWeight: "1000",
-    fontFamily: "Fjalla one",
-    fontSize: "10rem",
+    fontFamily: "ValkyRegular",
+    fontSize: "33.125rem",
     marginLeft: "0.5rem"
   },
   hiddenName: {
     fontWeight: "1000",
-    fontFamily: "Fjalla one",
+    fontFamily: "ValkyRegular",
     fontSize: "8rem",
     marginTop: "0",
   },

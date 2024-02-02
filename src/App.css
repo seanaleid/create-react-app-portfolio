@@ -5,3 +5,8 @@
   height: 100vh;
 }
 
+@font-face {
+  font-family: "ValkyRegular";
+  src: Local("ValkyRegular"),
+    url("./fonts/ValkyRegular.ttf") format("truetype");
+}
