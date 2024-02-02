@@ -13,58 +13,37 @@ const useStyles = makeStyles({
     maxWidth: "100vw",
   },
   titleTop: {
-    display: "flex",
-    alignItems: "baseline",
+    maxWidth: "80vw",
+    border: "1px solid pink",
+    bottom: "0",
   },
   hiddenTitleTop: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center"
   },
-  title: {
+  lastName: {
     fontWeight: "500",
     fontFamily: "ValkyRegular",
+    border: "1px solid pink",
   },
-  hiddenTitle: {
+  hiddenLastName: {
     fontWeight: "1000",
-    fontFamily: "Fjalla one",
+    fontFamily: "ValkyRegular",
     fontSize: "1.8rem",
   },
-  name: {
+  firstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "33.125rem",
     marginLeft: "0.5rem"
   },
-  hiddenName: {
+  hiddenFirstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "8rem",
     marginTop: "0",
   },
-  inside: {
-    display: "flex",
-    alignItems: "center",
-    margin: "0"
-  },
-  hiddenInside: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: "0"
-  },
-  typewriter: {
-    fontSize: "3rem",
-    fontFamily: "Fjalla one",
-    fontWeight: "1000",
-    marginLeft: "0.5rem"
-  },
-  hiddenTypewriter: {
-    fontSize: "1.8rem",
-    fontFamily: "Fjalla one",
-    fontWeight: "1000",
-    marginLeft: "0.5rem"
-  }
 });
 
 const Home = (props) => {
@@ -76,20 +55,19 @@ const {colors} = props;
       <Hidden smDown>
         <Container className={classes.box}>
           <div className={classes.titleTop}>
+            <h1 
+              className={classes.firstName} 
+              style={{color: `${colors.home}`}}
+            >
+              Sean</h1>
             <Typography 
               variant="h3" 
-              className={classes.title}
+              className={classes.lastName}
               style={{color: `${colors.home}`}}
             >
               NALEID VARGAS
             </Typography>
-            <h1 
-              className={classes.name} 
-              style={{color: `${colors.home}`}}
-            >
-              Sean</h1>
           </div>
-          
         </Container>
       </Hidden>
       <Hidden mdUp>
@@ -97,7 +75,7 @@ const {colors} = props;
           <div className={classes.hiddenTitleTop}>
             <Typography 
               variant="h4" 
-              className={classes.title}
+              className={classes.hiddenLastName}
               style={{color: `${colors.home}`}}
             >
               NALEID VARGAS
@@ -108,9 +86,7 @@ const {colors} = props;
             >
               Sean</h1>
           </div>
-
         </Container>
-        <image src="./src/logo.svg"/>
       </Hidden>
     </React.Fragment>
   );

@@ -16,7 +16,7 @@ import "./fonts/ValkyRegular.ttf";
 
 function App() {
   const [colors, setColors] = useState(colorz[0])
-  // console.log("App colors", colors);
+  
 
   useEffect(() => {
     const body = document.querySelector('body');
