@@ -130,6 +130,7 @@ const {colors} = props;
             />
           </div>
         </Container>
+        <image src="./src/logo.svg"/>
       </Hidden>
     </React.Fragment>
   );
