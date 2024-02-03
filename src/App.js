@@ -19,8 +19,30 @@ import "./fonts/ValkyRegular.ttf";
 
 const useStyles = makeStyles((theme) => ({
     layout: {
-      // background: "blue",
+      background: "rgba(251, 226, 161, 1)",
       display: "flex",
+      marginBottom: "0px",
+    }, 
+    icon: {
+      color: "40011E",
+    },
+    dotLeft: {
+      height: "1000px",
+      width: "1000px",
+      borderRadius: "50%",
+      position: "absolute",
+      bottom: "-35%",
+      left: "-30%",
+      background: "radial-gradient(circle, rgba(226,97,56,0.8) 0%, rgba(226,97,56,0.4) 40%, rgba(226,97,56,0) 100%)",
+      
+    },
+    dotRight: {
+      height: "25px",
+      width: "25px",
+      backgroundColor: "#000",
+      borderRadius: "50%",
+      position: "absolute"
+      
     }
   })  
 );
@@ -45,16 +67,17 @@ function App() {
       {/* <div className={classes.one}>1</div>
       <div className={classes.two}>2</div>
       <div className={classes.three}>3</div> */}
-      <Navbar colors={colors}/>
+      <Navbar className={classes.layer} colors={colors}/>
       {/* <Switch> */}
         <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
         <Route path="/about" render={props => <About {...props} colors={colors}/>}/>
         <Route path="/projects" render={props => <Projects {...props} colors={colors}/>}/>
         <Route path="/blog" render={props => <Contact {...props} colors={colors}/>}/>
       <div>
-
-        <ContrastIcon />
+        <ContrastIcon className={classes.icon}/>
       </div>
+      <span className={classes.dotLeft}/>
+      <span className={classes.dotRight}/>
       {/* </Switch> */}
       {/* <CloseIcon /> */}
       {/* <Footer colors={colors}/> */}

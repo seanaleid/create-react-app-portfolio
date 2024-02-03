@@ -10,16 +10,19 @@ import withWidth from '@material-ui/core/withWidth';
 const useStyles = makeStyles({
   box: {
     // border: "1px solid pink",
-    maxHeight: "100vh"
+    maxHeight: "100vh",
+    zIndex: "2"
   },
   titleTop: {
-    border: "1px solid pink",
+    // border: "1px solid pink",
     maxHeight: "100vh",
-    display: "flex"
+    display: "flex",
+    overflow: "hidden"
   },
   hiddenTitleTop: {
     display: "flex",
     flexDirection: "column",
+    // border: "1px solid pink",
   },
   lastName: {
     position: "absolute",
@@ -28,24 +31,24 @@ const useStyles = makeStyles({
     fontWeight: "500",
     fontFamily: "ValkyRegular",
     // border: "1px solid pink",
-    zIndex: "2"
   },
   hiddenLastName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "1.8rem",
+    // border: "1px solid pink",
   },
   firstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "33rem",
-    border: "1px solid pink"
+    // border: "1px solid pink"
   },
   hiddenFirstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "8rem",
-    // marginTop: "0",
+    // border: "1px solid pink",
   },
 });
 

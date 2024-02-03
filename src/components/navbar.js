@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
     width: "8vw",
     flexDirection: "column-reverse",
     justifyContent: "space-evenly",
+    zIndex: "2"
     // background: "red"
   },
   menuIconToolbar: {
