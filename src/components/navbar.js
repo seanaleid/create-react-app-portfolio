@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from 'clsx';
-import AppBar from "@material-ui/core/AppBar";
+// import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Grid from "@material-ui/core/Grid";
+// import { siteStyles } from "../utils/siteStyle";
+
+// import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+// import Grid from "@material-ui/core/Grid";
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 import Drawer from '@material-ui/core/Drawer';
@@ -23,34 +24,29 @@ import ListItem from '@material-ui/core/ListItem';
 
 const drawerWidth = '100%';
 
-function ElevationScroll(props) {
-  const { children, window } = props;
-  // Note that you normally won't need to set the window ref as useScrollTrigger
-  // will default to window.
-  // This is only being set here because the demo is in an iframe.
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined,
-  });
+// function ElevationScroll(props) {
+//   const { children, window } = props;
+//   // Note that you normally won't need to set the window ref as useScrollTrigger
+//   // will default to window.
+//   // This is only being set here because the demo is in an iframe.
+//   const trigger = useScrollTrigger({
+//     disableHysteresis: true,
+//     threshold: 0,
+//     target: window ? window() : undefined,
+//   });
 
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
+//   return React.cloneElement(children, {
+//     elevation: trigger ? 4 : 0,
+//   });
+// }
 
-ElevationScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func,
-};
+// ElevationScroll.propTypes = {
+//   children: PropTypes.element.isRequired,
+//   window: PropTypes.func,
+// };
 
 const useStyles = makeStyles((theme) => ({
-  bar: {
-    display: "flex",
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
+
   hide: {
     display: 'none',
   },
@@ -60,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background: "red"
+    // background: "red"
   },
   drawerHeader: {
     display: 'flex',
@@ -71,36 +67,35 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
   },
   toolbar: {
-    display: "flex",
-    justifyContent: "space-between",
+    height: "100vh",
+    width: "8vw",
+    flexDirection: "column-reverse",
+    justifyContent: "space-evenly",
+    // background: "red"
   },
   menuIconToolbar: {
-    width: "100%",
-  },
-  links: {
-    display: "flex",
+    width: "10vw",
   },
   text: {
-    minWidth: "120px",
+    fontSize: "14px",
     display: "flex",
     justifyContent: "flex-end",
+    transform: "rotate(-90deg)", 
+    fontColor: 'rgba(64, 1, 30, 1)',
+  },
+  copyright: {
+    width: "13rem",   
+    transform: "rotate(-90deg)", 
+  },
+  copyrightText: {
+    fontSize: "14px"
   },
   linkText: {
-    marginLeft: "20px",
     textDecoration: "none",
-    paddingLeft: "10px",
     fontFamily: 'Roboto',
     "&:hover": {
       fontWeight: "600",
     },
-  },
-  btn: {
-    marginLeft: "20px",
-    textDecoration: "none",
-    minWidth: "40px",
-    border: "none",
-    backgroundColor: "#FAFAFA",
-    fontSize: "2rem",
   },
   icon: {
     height: "3rem",
@@ -135,89 +130,70 @@ const ElevateAppBar = (props) => {
   return (
     <>
       <Hidden smDown>
-        <CssBaseline />
-        <ElevationScroll {...props}>
-          <AppBar className={classes.bar} style={{background: `${colors.body}`}}>
-            <Grid item xs={12}>
-              <Toolbar className={classes.toolbar}>
-                  <Typography variant="h6" className={classes.text}>
-                    <Link to="/" 
-                      className={classes.linkText} 
-                      id="home"
-                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                      onMouseLeave={() => {setHover(false)}}
-                      style={{
-                        color: (hover && hoverId === 'home' ? `${colors.highlight}` : `${colors.text}`),
-                        borderBottom: (hover && hoverId === 'home' ? `${colors.border}` : null),
-                      }} 
-                    >
-                      Sean Naleid Vargas &#169; 2024
-                    </Link>
-                  </Typography>
-                  <Typography variant="h6" className={classes.text}>
-                    <Link to="/" 
-                      className={classes.linkText} 
-                      id="home"
-                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                      onMouseLeave={() => {setHover(false)}}
-                      style={{
-                        color: (hover && hoverId === 'home' ? `${colors.highlight}` : `${colors.text}`),
-                        borderBottom: (hover && hoverId === 'home' ? `${colors.border}` : null),
-                      }} 
-                    >
-                      Home
-                    </Link>
-                  </Typography>
-                <Toolbar className={classes.links}>
-                  <Typography variant="h6" className={classes.text}>
-                    <Link to="/about" 
-                      className={classes.linkText} 
-                      id="about"
-                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                      onMouseLeave={() => {setHover(false)}}
-                      style={{
-                        color: (hover && hoverId === 'about' ? `${colors.highlight}` : `${colors.text}`),
-                        borderBottom: (hover && hoverId === 'about' ? `${colors.border}` : null),
-                      }}   
-                    >
-                      About
-                    </Link>
-                  </Typography>
-                  <Typography variant="h6" className={classes.text}>
-                    <Link to="/projects" 
-                      className={classes.linkText} 
-                      id="work"
-                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                      onMouseLeave={() => {setHover(false)}}
-                      style={{
-                        color: (hover && hoverId === 'work' ? `${colors.highlight}` : `${colors.text}`),
-                        borderBottom: (hover && hoverId === 'work' ? `${colors.border}` : null),
-                      }}   
-                    >
-                      Projects
-                    </Link>
-                  </Typography>
-                  <Typography variant="h6" className={classes.text}>
-                    <Link to="/blog" 
-                      className={classes.linkText} 
-                      id="contact"
-                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                      onMouseLeave={() => {setHover(false)}}
-                      style={{
-                        color: (hover && hoverId === 'contact' ? `${colors.highlight}` : `${colors.text}`),
-                        borderBottom: (hover && hoverId === 'contact' ? `${colors.border}` : null),
-                      }}
-                    >
-                      Blog
-                    </Link>
-                  </Typography>
-                  {/* <button onClick={toggleMode} className={classes.btn}>{ darkMode ? lightMoon : darkMoon }</button> */}
-                </Toolbar>
-              </Toolbar>
-            </Grid>
-          </AppBar>
-        </ElevationScroll>
-        <Toolbar />
+        <Toolbar className={classes.toolbar}>
+            <div className={classes.copyright}>
+              <Typography variant="h6" className={classes.copyrightText}>
+                  Sean Naleid Vargas &#169; 2024
+              </Typography>
+            </div>
+            <Typography variant="h6" className={classes.text}>
+              <Link to="/" 
+                className={classes.linkText} 
+                id="home"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  color: (hover && hoverId === 'home' ? `${colors.highlight}` : `${colors.text}`),
+                  borderBottom: (hover && hoverId === 'home' ? `${colors.border}` : null),
+                }} 
+              >
+                HOME /
+              </Link>
+            </Typography>
+          
+            <Typography variant="h6" className={classes.text}>
+              <Link to="/about" 
+                className={classes.linkText} 
+                id="about"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  color: (hover && hoverId === 'about' ? `${colors.highlight}` : `${colors.text}`),
+                  borderBottom: (hover && hoverId === 'about' ? `${colors.border}` : null),
+                }}   
+              >
+                ABOUT /
+              </Link>
+            </Typography>
+            <Typography variant="h6" className={classes.text}>
+              <Link to="/projects" 
+                className={classes.linkText} 
+                id="work"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  color: (hover && hoverId === 'work' ? `${colors.highlight}` : `${colors.text}`),
+                  borderBottom: (hover && hoverId === 'work' ? `${colors.border}` : null),
+                }}   
+              >
+                PROJECTS /
+              </Link>
+            </Typography>
+            <Typography variant="h6" className={classes.text}>
+              <Link to="/blog" 
+                className={classes.linkText} 
+                id="contact"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  color: (hover && hoverId === 'contact' ? `${colors.highlight}` : `${colors.text}`),
+                  borderBottom: (hover && hoverId === 'contact' ? `${colors.border}` : null),
+                }}
+              >
+                BLOG /
+              </Link>
+            </Typography>
+        </Toolbar>
       </Hidden>
       <Hidden mdUp>
         <Toolbar>

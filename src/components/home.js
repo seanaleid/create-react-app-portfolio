@@ -9,23 +9,26 @@ import withWidth from '@material-ui/core/withWidth';
 
 const useStyles = makeStyles({
   box: {
-    margin: "0 auto",
-    maxWidth: "100vw",
+    // border: "1px solid pink",
+    maxHeight: "100vh"
   },
   titleTop: {
-    maxWidth: "80vw",
     border: "1px solid pink",
-    bottom: "0",
+    maxHeight: "100vh",
+    display: "flex"
   },
   hiddenTitleTop: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
   },
   lastName: {
+    position: "absolute",
+    right: "25vw",
+    bottom: "40vh",
     fontWeight: "500",
     fontFamily: "ValkyRegular",
-    border: "1px solid pink",
+    // border: "1px solid pink",
+    zIndex: "2"
   },
   hiddenLastName: {
     fontWeight: "1000",
@@ -35,20 +38,26 @@ const useStyles = makeStyles({
   firstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
-    fontSize: "33.125rem",
-    marginLeft: "0.5rem"
+    fontSize: "33rem",
+    border: "1px solid pink"
   },
   hiddenFirstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "8rem",
-    marginTop: "0",
+    // marginTop: "0",
   },
 });
 
 const Home = (props) => {
 const classes = useStyles();
 const {colors} = props;
+
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  console.log('The browser is in dark mode');
+} else {
+  console.log('The browser is in light mode');
+}
 
   return (
     <React.Fragment>

@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
-import { Switch, Route } from "react-router-dom";
+import {  Route } from "react-router-dom";
 import "./App.css";
 import {colorz} from "./components/colors.js"
+
+import { makeStyles } from "@material-ui/core/styles";
 
 // components
 import Navbar from "./components/navbar.js";
@@ -9,14 +11,23 @@ import Home from "./components/home.js";
 import About from "./components/about.js";
 import Projects from "./components/projects.js";
 import Contact from "./components/contact.js";
-import Footer from "./components/footer.js";
+// import Footer from "./components/footer.js";
 
 // fonts
 import "./fonts/ValkyRegular.ttf";
 
+const useStyles = makeStyles((theme) => ({
+    layout: {
+      // background: "blue",
+      display: "flex",
+    }
+  })  
+);
+
 function App() {
   const [colors, setColors] = useState(colorz[0])
   
+  const classes = useStyles();
 
   useEffect(() => {
     const body = document.querySelector('body');
@@ -29,15 +40,18 @@ function App() {
   }
 
   return (
-    <div className="App" onClick={handleChangeColors}>
+    <div className={classes.layout} onClick={handleChangeColors}>
+      {/* <div className={classes.one}>1</div>
+      <div className={classes.two}>2</div>
+      <div className={classes.three}>3</div> */}
       <Navbar colors={colors}/>
-      <Switch>
+      {/* <Switch> */}
         <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
         <Route path="/about" render={props => <About {...props} colors={colors}/>}/>
         <Route path="/projects" render={props => <Projects {...props} colors={colors}/>}/>
         <Route path="/blog" render={props => <Contact {...props} colors={colors}/>}/>
-      </Switch>
-      <Footer colors={colors}/>
+      {/* </Switch> */}
+      {/* <Footer colors={colors}/> */}
     </div>
   );
 }
