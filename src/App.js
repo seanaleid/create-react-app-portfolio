@@ -11,6 +11,7 @@ import Home from "./components/home.js";
 import About from "./components/about.js";
 import Projects from "./components/projects.js";
 import Contact from "./components/contact.js";
+import ContrastIcon from '@mui/icons-material/Contrast';
 // import Footer from "./components/footer.js";
 
 // fonts
@@ -50,7 +51,12 @@ function App() {
         <Route path="/about" render={props => <About {...props} colors={colors}/>}/>
         <Route path="/projects" render={props => <Projects {...props} colors={colors}/>}/>
         <Route path="/blog" render={props => <Contact {...props} colors={colors}/>}/>
+      <div>
+
+        <ContrastIcon />
+      </div>
       {/* </Switch> */}
+      {/* <CloseIcon /> */}
       {/* <Footer colors={colors}/> */}
     </div>
   );
