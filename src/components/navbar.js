@@ -108,14 +108,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ElevateAppBar = (props) => {
-  // const [darkMode, setDarkMode] = useDarkMode('Dark Mode', false);
-  // const toggleMode = e => {
-  //     e.preventDefault();
-  //     setDarkMode(!darkMode);
-  // };
-  // const theme = useTheme();
-  const [hover, setHover] = useState(false);
-  const [hoverId, setHoverId] = useState(null);
   const [open, setOpen] = useState(false);
 
   const classes = useStyles();
@@ -129,8 +121,6 @@ const ElevateAppBar = (props) => {
     setOpen(false);
   };
 
-  // const lightMoon = <span role="img" aria-label="light mode moon emoji">🌝</span>;
-  // const darkMoon = <span role="img" aria-label="dark mode moon emoji">🌚</span>
   return (
     <>
       <Hidden smDown>
@@ -144,8 +134,6 @@ const ElevateAppBar = (props) => {
               <Link to="/" 
                 className={classes.linkText} 
                 id="home"
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
               >
                 HOME /
               </Link>
@@ -155,8 +143,6 @@ const ElevateAppBar = (props) => {
               <Link to="/about" 
                 className={classes.linkText} 
                 id="about"
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
               >
                 ABOUT /
               </Link>
@@ -165,8 +151,6 @@ const ElevateAppBar = (props) => {
               <Link to="/projects" 
                 className={classes.linkText} 
                 id="work"
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
               >
                 PROJECTS /
               </Link>
@@ -175,8 +159,6 @@ const ElevateAppBar = (props) => {
               <Link to="/blog" 
                 className={classes.linkText} 
                 id="contact"
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
               >
                 BLOG /
               </Link>
@@ -222,12 +204,6 @@ const ElevateAppBar = (props) => {
                       className={classes.linkText} 
                       id={text}
                       onClick={handleDrawerClose}
-                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                      onMouseLeave={() => {setHover(false)}}
-                      style={{
-                        color: (hover && hoverId === text ? `${colors.highlight}` : `${colors.text}`),
-                        borderBottom: (hover && hoverId === 'drawerNav' ? `${colors.border}` : null),
-                      }} 
                   >
                     {text}
                   </Link>

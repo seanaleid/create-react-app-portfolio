@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {  Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import {colorz} from "./components/colors.js"
 
@@ -102,11 +102,12 @@ function App() {
       <div className={classes.two}>2</div>
       <div className={classes.three}>3</div> */}
       <Navbar className={classes.layer} colors={colors}/>
-      {/* <Switch> */}
+      <Switch>
         <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
         <Route path="/about" render={props => <About {...props} colors={colors}/>}/>
         <Route path="/projects" render={props => <Projects {...props} colors={colors}/>}/>
         <Route path="/blog" render={props => <Contact {...props} colors={colors}/>}/>
+      </Switch>
       <div className={classes.iconBox} onClick={rotateMode}>
         <ContrastIcon 
           className={classes.icon} 
@@ -116,9 +117,7 @@ function App() {
       </div>
       <span className={classes.dotLeft}/>
       <span className={classes.dotRight}/>
-      {/* </Switch> */}
-      {/* <CloseIcon /> */}
-      {/* <Footer colors={colors}/> */}
+    
     </div>
   );
 }
