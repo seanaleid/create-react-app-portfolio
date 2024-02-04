@@ -32,17 +32,19 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: "50%",
       position: "absolute",
       bottom: "-35%",
-      left: "-30%",
+      left: "-20%",
       background: "radial-gradient(circle, rgba(226,97,56,0.8) 0%, rgba(226,97,56,0.4) 40%, rgba(226,97,56,0) 100%)",
-      
+      boxShadow: "0px 0px 20px 20px rgba(226,97,56,0.2)"
     },
     dotRight: {
-      height: "25px",
-      width: "25px",
-      backgroundColor: "#000",
+      height: "750px",
+      width: "750px",
       borderRadius: "50%",
-      position: "absolute"
-      
+      position: "absolute",
+      top: "-10%",
+      right: "-2%",
+      background: "radial-gradient(circle, rgba(176,241,76,0.8) 0%, rgba(176,241,76,0.6) 60%, rgba(176,241,76,0) 80%)",
+      boxShadow: "0px 0px 20px 20px rgba(176,241,76,0.2)"
     }
   })  
 );

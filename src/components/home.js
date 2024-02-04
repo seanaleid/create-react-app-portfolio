@@ -31,6 +31,7 @@ const useStyles = makeStyles({
     fontWeight: "500",
     fontFamily: "ValkyRegular",
     // border: "1px solid pink",
+    color: 'rgba(64, 1, 30, 1)',
   },
   hiddenLastName: {
     fontWeight: "1000",
@@ -42,7 +43,8 @@ const useStyles = makeStyles({
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "33rem",
-    // border: "1px solid pink"
+    // border: "1px solid pink",
+    color: 'rgba(64, 1, 30, 1)',
   },
   hiddenFirstName: {
     fontWeight: "1000",
@@ -69,13 +71,11 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
           <div className={classes.titleTop}>
             <h1 
               className={classes.firstName} 
-              style={{color: `${colors.home}`}}
             >
               Sean</h1>
             <Typography 
               variant="h3" 
               className={classes.lastName}
-              style={{color: `${colors.home}`}}
             >
               NALEID VARGAS
             </Typography>

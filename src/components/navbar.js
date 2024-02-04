@@ -82,14 +82,16 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     transform: "rotate(-90deg)", 
-    fontColor: 'rgba(64, 1, 30, 1)',
+    // color: 'rgba(64, 1, 30, 1)',
+    color: 'green',
   },
   copyright: {
     width: "13rem",   
     transform: "rotate(-90deg)", 
   },
   copyrightText: {
-    fontSize: "14px"
+    fontSize: "14px",
+    color: 'rgba(64, 1, 30, 1)',
   },
   linkText: {
     textDecoration: "none",
@@ -143,10 +145,6 @@ const ElevateAppBar = (props) => {
                 id="home"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === 'home' ? `${colors.highlight}` : `${colors.text}`),
-                  borderBottom: (hover && hoverId === 'home' ? `${colors.border}` : null),
-                }} 
               >
                 HOME /
               </Link>
