@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
     width: "8vw",
     flexDirection: "column-reverse",
     justifyContent: "space-evenly",
-    zIndex: "2"
+    zIndex: "1000"
     // background: "red"
   },
   menuIconToolbar: {
@@ -94,6 +94,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'rgba(64, 1, 30, 1)',
   },
   linkText: {
+    color: 'rgba(64, 1, 30, 1)',
     textDecoration: "none",
     fontFamily: 'Roboto',
     "&:hover": {
@@ -135,7 +136,7 @@ const ElevateAppBar = (props) => {
       <Hidden smDown>
         <Toolbar className={classes.toolbar}>
             <div className={classes.copyright}>
-              <Typography variant="h6" className={classes.copyrightText}>
+              <Typography variant="h6" className={classes.copyrightText} >
                   Sean Naleid Vargas &#169; 2024
               </Typography>
             </div>
@@ -156,10 +157,6 @@ const ElevateAppBar = (props) => {
                 id="about"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === 'about' ? `${colors.highlight}` : `${colors.text}`),
-                  borderBottom: (hover && hoverId === 'about' ? `${colors.border}` : null),
-                }}   
               >
                 ABOUT /
               </Link>
@@ -170,10 +167,6 @@ const ElevateAppBar = (props) => {
                 id="work"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === 'work' ? `${colors.highlight}` : `${colors.text}`),
-                  borderBottom: (hover && hoverId === 'work' ? `${colors.border}` : null),
-                }}   
               >
                 PROJECTS /
               </Link>
@@ -184,10 +177,6 @@ const ElevateAppBar = (props) => {
                 id="contact"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === 'contact' ? `${colors.highlight}` : `${colors.text}`),
-                  borderBottom: (hover && hoverId === 'contact' ? `${colors.border}` : null),
-                }}
               >
                 BLOG /
               </Link>
@@ -203,10 +192,6 @@ const ElevateAppBar = (props) => {
             onClick={handleDrawerOpen}
             edge="end"
             className={clsx( open && classes.hide)}
-            style={{
-              color: (hover && hoverId === 'menuIcon' ? `${colors.highlight}` : `${colors.text}`),
-              borderBottom: (hover && hoverId === 'menuIcon' ? `${colors.border}` : null),
-            }} 
           >
             <MenuIcon className={classes.icon}/>
           </IconButton>
