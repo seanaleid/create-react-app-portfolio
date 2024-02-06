@@ -100,12 +100,12 @@ const About = ({colors}) => {
     <React.Fragment>
       <Container className={classes.box}>
         <Hidden smDown>
-          <Typography variant="h1" className={classes.title} style={{color:`${colors.about}`}}>Nice to meet you</Typography>
+          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
         </Hidden>
         <Hidden mdUp>
-          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.about}`}}>Nice to meet you</Typography>
+          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
         </Hidden>
-        <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
+        <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
           I currently live in the Washington DC area. I come from linguistics and education backgrounds. I combine my 10 years of experience of teaching English to Speakers of other Languages (ESOL), coaching, translation, team building, and teacher training into my current role as Chief Technology Officer at 
             <a 
               href="https://nuclius.com/" 
@@ -116,14 +116,14 @@ const About = ({colors}) => {
               onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
               onMouseLeave={() => {setHover(false)}}
               style={{
-                color: (hover && hoverId === "nuclius" ? `${colors.highlight}` : `${colors.text}`),
+                color: (hover && hoverId === "nuclius" ? `${colors.highlight}` : `${colors.primary}`),
                 textDecoration: (hover && hoverId === "nuclius" ? 'underline' : null),
               }} 
             >
               Nuclius
             </a>.
         </Typography>
-        <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
+        <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
         My interest in web development sparked in a graduate translation class in Barcelona, Spain. Translating code related material comes with many difficulties due to the way that code is written. I was inspired to apply my linguistic and pedagogical experience to the coding world and offer a different point of view when writing code, mainly focusing on the user and how they will interact with the user interface. I am passionate about clean design and accessible products for everyone. 
         </Typography>
         
@@ -134,7 +134,7 @@ const About = ({colors}) => {
               target="_blank" 
               rel="noreferrer"
             >
-              <MailOutlineOutlined className={classes.icon} style={{color: `${colors.body}`}}/>
+              <MailOutlineOutlined className={classes.icon} style={{color: `${colors.primary}`}}/>
             </a>
           </Avatar>
           <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
@@ -143,7 +143,7 @@ const About = ({colors}) => {
               target="_blank" 
               rel="noreferrer"
             >
-              <LinkedIn className={classes.icon} style={{color: `${colors.body}`}}/>
+              <LinkedIn className={classes.icon} style={{color: `${colors.primary}`}}/>
             </a>
           </Avatar>
           <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
@@ -152,7 +152,7 @@ const About = ({colors}) => {
               target="_blank" 
               rel="noreferrer"
             >
-              <GitHub className={classes.icon} style={{color: `${colors.body}`}}/>
+              <GitHub className={classes.icon} style={{color: `${colors.primary}`}}/>
             </a>
           </Avatar>
           <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
@@ -161,7 +161,7 @@ const About = ({colors}) => {
               target="_blank" 
               rel="noreferrer"
             >
-              <Twitter className={classes.icon} style={{color: `${colors.body}`}}/>
+              <Twitter className={classes.icon} style={{color: `${colors.primary}`}}/>
             </a>
           </Avatar>
         </Container>

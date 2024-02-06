@@ -125,7 +125,10 @@ const ElevateAppBar = (props) => {
       <Hidden smDown>
         <Toolbar className={classes.toolbar}>
             <div className={classes.copyright}>
-              <Typography variant="h6" className={classes.copyrightText} >
+              <Typography variant="h6" 
+                className={classes.copyrightText} 
+                style={{color: `${colors.primary}`}}
+              >
                   Sean Naleid Vargas &#169; 2024
               </Typography>
             </div>
@@ -133,6 +136,7 @@ const ElevateAppBar = (props) => {
               <Link to="/" 
                 className={classes.linkText} 
                 id="home"
+                style={{color: `${colors.primary}`}}
               >
                 HOME /
               </Link>
@@ -142,6 +146,7 @@ const ElevateAppBar = (props) => {
               <Link to="/about" 
                 className={classes.linkText} 
                 id="about"
+                style={{color: `${colors.primary}`}}
               >
                 ABOUT /
               </Link>
@@ -150,6 +155,7 @@ const ElevateAppBar = (props) => {
               <Link to="/projects" 
                 className={classes.linkText} 
                 id="work"
+                style={{color: `${colors.primary}`}}
               >
                 PROJECTS /
               </Link>
@@ -158,6 +164,7 @@ const ElevateAppBar = (props) => {
               <Link to="/blog" 
                 className={classes.linkText} 
                 id="contact"
+                style={{color: `${colors.primary}`}}
               >
                 BLOG /
               </Link>

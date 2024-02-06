@@ -46,25 +46,25 @@ const useStyles = makeStyles({
   }
 });
 
-const Contact = ({colors}) => {
+const Blog = ({colors}) => {
   const classes = useStyles();
   return (
     <>
       <Container className={classes.box}>
         <Hidden smDown>
-          <Typography variant="h1" className={classes.title} style={{color:`${colors.about}`}}>Blog</Typography>
+          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Blog</Typography>
         </Hidden>
         <Hidden mdUp>
-          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.about}`}}>Blog</Typography>
+          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Blog</Typography>
         </Hidden>
       </Container>
     </>
   )
 }
 
-Contact.propTypes = {
+Blog.propTypes = {
   colors: PropTypes.object,
   width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
 }
 
-export default withWidth()(Contact);
+export default withWidth()(Blog);

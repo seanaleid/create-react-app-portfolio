@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
-import {colorz} from "./components/colors.js"
-
+// import {colorz} from "./components/colors.js"
 import { makeStyles } from "@material-ui/core/styles";
 
 // components
@@ -10,15 +9,17 @@ import Navbar from "./components/navbar.js";
 import Home from "./components/home.js";
 import About from "./components/about.js";
 import Projects from "./components/projects.js";
-import Contact from "./components/contact.js";
+import Blog from "./components/blog.js";
 import ContrastIcon from '@mui/icons-material/Contrast';
 
 // fonts
 import "./fonts/ValkyRegular.ttf";
 
+//styles
+import { siteStyles } from "./utils/siteStyle.js";
+
 const useStyles = makeStyles((theme) => ({
     layout: {
-      background: "rgba(251, 226, 161, 1)",
       display: "flex",
       marginBottom: "0px",
       overflow: "clip"
@@ -49,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       position: "inherit",
       right: "5%",
       borderRadius: "50%",
-      background: "radial-gradient(circle, rgba(226,97,56,0.8) 0%, rgba(226,97,56,0.4) 40%, rgba(226,97,56,0) 100%)",
+      // background: "radial-gradient(circle, rgba(226,97,56,0.8) 0%, rgba(226,97,56,0.4) 40%, rgba(226,97,56,0) 100%)",
       boxShadow: "0px 0px 20px 20px rgba(226,97,56,0.2)",
     },
     dotRight: {
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 );
 
 function App() {
-  const [colors] = useState(colorz[0])
+  const [colors, setColors] = useState(siteStyles[0])
   const [degrees, setDegrees] = useState('0deg');
   const classes = useStyles();
 
@@ -77,17 +78,20 @@ function App() {
 
   const rotateMode = (e) => {
     e.preventDefault();
-    degrees === '0deg' ? setDegrees('180deg') : setDegrees('0deg')
+    degrees === '0deg' ? setDegrees('180deg') : setDegrees('0deg');
+    colors === siteStyles[0] ? setColors(siteStyles[1]) : setColors(siteStyles[0])
   }
 
   return (
-    <div className={classes.layout} >
+    <div className={classes.layout} 
+      style={{"background":`${colors.background}`}}
+    >
       <Navbar className={classes.layer} colors={colors}/>
       <Switch>
         <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
         <Route path="/about" render={props => <About {...props} colors={colors}/>}/>
         <Route path="/projects" render={props => <Projects {...props} colors={colors}/>}/>
-        <Route path="/blog" render={props => <Contact {...props} colors={colors}/>}/>
+        <Route path="/blog" render={props => <Blog {...props} colors={colors}/>}/>
       </Switch>
       <div className={classes.iconBox} 
         onClick={rotateMode}
@@ -96,11 +100,19 @@ function App() {
           className={classes.icon} 
           sx={{width: "2.5rem", height: "2.5rem"}}
           id="iconId"
-          style={{"transform": `rotate(${degrees})`}}
+          style={{transform: `rotate(${degrees})`,
+            "color":`${colors.primary}`
+          }}
         />
       </div>
-      <div className={classes.cut}><div className={classes.dotLeft}/></div>
-      <span className={classes.dotRight}/>
+      <div className={classes.cut}>
+        <div className={classes.dotLeft}
+          style={{background: `${colors.leftRadial}`}}
+        />
+      </div>
+      <span className={classes.dotRight}
+        style={{background: `${colors.rightRadial}`}}
+      />
     
     </div>
   );

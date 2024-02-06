@@ -55,10 +55,10 @@ const Projects = ({colors}) => {
     <React.Fragment>
       <Container className={classes.box}>
         <Hidden smDown>
-          <Typography variant="h1" className={classes.title} style={{color:`${colors.about}`}}>Projects</Typography>
+          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Projects</Typography>
         </Hidden>
         <Hidden mdUp>
-          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.about}`}}>Projects</Typography>
+          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Projects</Typography>
         </Hidden>
       </Container>
     </React.Fragment>
