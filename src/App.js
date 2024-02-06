@@ -29,15 +29,12 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      zIndex: "1100"
+      zIndex: "1100",
     },
     icon: {
       color: 'rgba(64, 1, 30, 1)',
-      transform: "rotate(0deg)",
     },
     cut: {
-      // border: "5px solid blue",
-      // backgroundColor: "purple",
       height: "500px",
       width: "1000px", 
       position: "absolute",
@@ -52,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
       position: "inherit",
       right: "5%",
       borderRadius: "50%",
-      
       background: "radial-gradient(circle, rgba(226,97,56,0.8) 0%, rgba(226,97,56,0.4) 40%, rgba(226,97,56,0) 100%)",
       boxShadow: "0px 0px 20px 20px rgba(226,97,56,0.2)",
     },
@@ -71,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const [colors] = useState(colorz[0])
-  const [degrees] = useState('0deg');
+  const [degrees, setDegrees] = useState('0deg');
   const classes = useStyles();
 
   useEffect(() => {
@@ -79,22 +75,17 @@ function App() {
     circle.style.transform = "rotate(`${degrees}`)";
   }, [colors, degrees])
 
-  const rotateMode = () => {
-    // e.preventDefault();
-    // degrees > 0 ? SetDegrees(180) : SetDegrees(0);
-    // if(degrees > 0){
-    //   setDegrees('180deg') 
-    // } else {
-    //   setDegrees('0deg');
-    // }
-    console.log("Hi I worked");
+  const rotateMode = (e) => {
+    e.preventDefault();
+    if(degrees === '0deg'){
+      setDegrees('180deg') 
+    } else {
+      setDegrees('0deg');
+    }
   }
 
   return (
     <div className={classes.layout} >
-      {/* <div className={classes.one}>1</div>
-      <div className={classes.two}>2</div>
-      <div className={classes.three}>3</div> */}
       <Navbar className={classes.layer} colors={colors}/>
       <Switch>
         <Route exact path="/" render={props => <Home {...props} colors={colors}/>}/>
@@ -102,12 +93,14 @@ function App() {
         <Route path="/projects" render={props => <Projects {...props} colors={colors}/>}/>
         <Route path="/blog" render={props => <Contact {...props} colors={colors}/>}/>
       </Switch>
-      <div className={classes.iconBox} >
+      <div className={classes.iconBox} 
+        onClick={rotateMode}
+      >
         <ContrastIcon 
           className={classes.icon} 
           sx={{width: "2.5rem", height: "2.5rem"}}
           id="iconId"
-          onClick={rotateMode}
+          style={{"transform": `rotate(${degrees})`}}
         />
       </div>
       <div className={classes.cut}><div className={classes.dotLeft}/></div>

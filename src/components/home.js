@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   lastName: {
     position: "absolute",
     right: "25vw",
-    bottom: "40vh",
+    bottom: "38vh",
     fontWeight: "500",
     fontFamily: "ValkyRegular",
     // border: "1px solid pink",
