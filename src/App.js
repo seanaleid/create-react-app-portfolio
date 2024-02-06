@@ -77,11 +77,7 @@ function App() {
 
   const rotateMode = (e) => {
     e.preventDefault();
-    if(degrees === '0deg'){
-      setDegrees('180deg') 
-    } else {
-      setDegrees('0deg');
-    }
+    degrees === '0deg' ? setDegrees('180deg') : setDegrees('0deg')
   }
 
   return (
