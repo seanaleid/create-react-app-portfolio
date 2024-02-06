@@ -15,6 +15,7 @@ const useStyles = makeStyles({
   box: {
     margin: "0 auto",
     maxWidth: "1000px",
+    zIndex: "2"
   },
   title: {
     fontWeight: "bold",

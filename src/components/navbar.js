@@ -82,8 +82,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     transform: "rotate(-90deg)", 
-    // color: 'rgba(64, 1, 30, 1)',
-    color: 'green',
   },
   copyright: {
     width: "13rem",   
@@ -100,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       fontWeight: "600",
     },
+    padding: "0.5rem"
   },
   icon: {
     height: "3rem",
