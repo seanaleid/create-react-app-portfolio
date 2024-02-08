@@ -21,7 +21,6 @@ import { siteStyles } from "./utils/siteStyle.js";
 const useStyles = makeStyles((theme) => ({
     layout: {
       display: "flex",
-      marginBottom: "0px",
       overflow: "clip"
     }, 
     iconBox: {
@@ -49,9 +48,7 @@ const useStyles = makeStyles((theme) => ({
       width: "1000px",
       position: "inherit",
       right: "5%",
-      borderRadius: "50%",
-      // background: "radial-gradient(circle, rgba(226,97,56,0.8) 0%, rgba(226,97,56,0.4) 40%, rgba(226,97,56,0) 100%)",
-      boxShadow: "0px 0px 20px 20px rgba(226,97,56,0.2)",
+      borderRadius: "50%"
     },
     dotRight: {
       height: "750px",
@@ -59,9 +56,7 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: "50%",
       position: "absolute",
       top: "-10%",
-      right: "-2%",
-      background: "radial-gradient(circle, rgba(176,241,76,0.8) 0%, rgba(176,241,76,0.6) 60%, rgba(176,241,76,0) 80%)",
-      boxShadow: "0px 0px 20px 20px rgba(176,241,76,0.2)",
+      right: "-2%"
     }
   })  
 );
@@ -107,11 +102,15 @@ function App() {
       </div>
       <div className={classes.cut}>
         <div className={classes.dotLeft}
-          style={{background: `${colors.leftRadial}`}}
+          style={{background: `${colors.leftRadial}`,
+          boxShadow: `${colors.leftShadow}`
+          }}
         />
       </div>
       <span className={classes.dotRight}
-        style={{background: `${colors.rightRadial}`}}
+        style={{background: `${colors.rightRadial}`,
+          boxShadow: `${colors.rightShadow}`,
+        }}
       />
     
     </div>

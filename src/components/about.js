@@ -11,17 +11,39 @@ import LinkedIn from '@material-ui/icons/LinkedIn';
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 
+// import font styles
+import { fontStyles } from "../utils/fontStyle.js";
+
 const useStyles = makeStyles({
   box: {
-    margin: "0 auto",
-    maxWidth: "1000px",
-    zIndex: "2"
+    maxWidth: "100vw",
+    zIndex: "2",
+    border: "1px solid blue",
+    display: "flex",
+    justifyContents: "flexStart"
+  },
+  leftContainer: {
+    // border: "1px solid green",
+    maxWidth: "35%",
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: "5rem"
+    // alignItems: "center"
+  },
+  rightContainer: {
+    border: "1px solid orange",
+    paddingTop: "5rem",
+    maxWidth: "65%",
+  },
+  image: {
+    height: "50rem",
+    width: "28rem"
   },
   title: {
-    fontWeight: "bold",
-    fontFamily: "Fjalla one",
-    marginTop: "3rem",
-    marginBottom: "3rem",
+    fontWeight: `${fontStyles.headerBold}`,
+    fontFamily: `${fontStyles.header}`,
+    fontSize: `${fontStyles.headerSize}`,
+    // marginBottom: "3rem",
   },
   titleCenter: {
     fontWeight: "bold",
@@ -36,7 +58,7 @@ const useStyles = makeStyles({
   },
   text: {
     marginBottom: "1rem",
-    fontFamily: "Roboto",
+    fontFamily: `${fontStyles.text}`,
     textAlign: "justify",
   },
   cardContainer: {
@@ -99,72 +121,81 @@ const About = ({colors}) => {
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Hidden smDown>
-          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
-        </Hidden>
-        <Hidden mdUp>
-          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
-        </Hidden>
-        <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
-          I currently live in the Washington DC area. I come from linguistics and education backgrounds. I combine my 10 years of experience of teaching English to Speakers of other Languages (ESOL), coaching, translation, team building, and teacher training into my current role as Chief Technology Officer at 
-            <a 
-              href="https://nuclius.com/" 
-              id="nuclius"
-              target="_blank"
-              rel="noreferrer"
-              className={classes.linkText}
-              onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-              onMouseLeave={() => {setHover(false)}}
-              style={{
-                color: (hover && hoverId === "nuclius" ? `${colors.highlight}` : `${colors.primary}`),
-                textDecoration: (hover && hoverId === "nuclius" ? 'underline' : null),
-              }} 
-            >
-              Nuclius
-            </a>.
-        </Typography>
-        <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
-        My interest in web development sparked in a graduate translation class in Barcelona, Spain. Translating code related material comes with many difficulties due to the way that code is written. I was inspired to apply my linguistic and pedagogical experience to the coding world and offer a different point of view when writing code, mainly focusing on the user and how they will interact with the user interface. I am passionate about clean design and accessible products for everyone. 
-        </Typography>
-        
-        <Container className={classes.inside}>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
-            <a 
-              href="mailto:seannaleidvargas@gmail.com"
-              target="_blank" 
-              rel="noreferrer"
-            >
-              <MailOutlineOutlined className={classes.icon} style={{color: `${colors.primary}`}}/>
-            </a>
-          </Avatar>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
-            <a 
-              href="https://www.linkedin.com/in/sean-naleid-vargas/"
-              target="_blank" 
-              rel="noreferrer"
-            >
-              <LinkedIn className={classes.icon} style={{color: `${colors.primary}`}}/>
-            </a>
-          </Avatar>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
-            <a 
-              href="https://www.github.com/seanaleid"
-              target="_blank" 
-              rel="noreferrer"
-            >
-              <GitHub className={classes.icon} style={{color: `${colors.primary}`}}/>
-            </a>
-          </Avatar>
-          <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
-            <a 
-              href="https://twitter.com/SeanNaleid"
-              target="_blank" 
-              rel="noreferrer"
-            >
-              <Twitter className={classes.icon} style={{color: `${colors.primary}`}}/>
-            </a>
-          </Avatar>
+        <Container className={classes.leftContainer}>
+          <Avatar variant="rounded" className={classes.image} alt="Black and white portrait of Sean Naleid Vargas." src="https://kobalt-pics.s3.amazonaws.com/developer/sean-black-and-white.png"/>
         </Container>
+        <Container className={classes.rightContainer}>
+          <Hidden smDown>
+            <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
+          </Hidden>
+          <Hidden mdUp>
+            <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
+          </Hidden>
+          <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
+            Hey, I&#39;m Sean—a problem-solver and perpetual learner currently navigating the Product Owner role at 
+              <a 
+                href="https://www.kitestring.com/" 
+                id="kitestring"
+                target="_blank"
+                rel="noreferrer"
+                className={classes.linkText}
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  color: (hover && hoverId === "kitestring" ? `${colors.highlight}` : `${colors.primary}`),
+                  textDecoration: (hover && hoverId === "kitestring" ? 'underline' : null),
+                }} 
+              >
+                Kitestring Technical Consultants.
+              </a> I&#39;ve worn various hats, from teaching to translating, coding, managing projects, and even trying my hand at being a startup CTO. 
+          </Typography>
+          <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
+            Teaching showed me the power of education, and the tech world introduced me to the art of coding and design. Managing diverse teams taught me a thing or two about orchestrating projects effectively.
+          </Typography>
+          <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
+          Now, as a Product Owner, I bring this mishmash of experiences to the table. I&#39;m all about the sweet spot where technology and creativity meet. Let&#39;s make problem-solving less of a chore and more of an adventure. Let&#39;s navigate this exciting journey together!
+          </Typography>
+          <Container className={classes.inside}>
+            <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <a 
+                href="mailto:seannaleidvargas@gmail.com"
+                target="_blank" 
+                rel="noreferrer"
+              >
+                <MailOutlineOutlined className={classes.icon} style={{color: `${colors.primary}`}}/>
+              </a>
+            </Avatar>
+            <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <a 
+                href="https://www.linkedin.com/in/sean-naleid-vargas/"
+                target="_blank" 
+                rel="noreferrer"
+              >
+                <LinkedIn className={classes.icon} style={{color: `${colors.primary}`}}/>
+              </a>
+            </Avatar>
+            <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <a 
+                href="https://www.github.com/seanaleid"
+                target="_blank" 
+                rel="noreferrer"
+              >
+                <GitHub className={classes.icon} style={{color: `${colors.primary}`}}/>
+              </a>
+            </Avatar>
+            <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <a 
+                href="https://twitter.com/SeanNaleid"
+                target="_blank" 
+                rel="noreferrer"
+              >
+                <Twitter className={classes.icon} style={{color: `${colors.primary}`}}/>
+              </a>
+            </Avatar>
+          </Container>
+        </Container>
+        
+        
       </Container>
     </React.Fragment>
   );

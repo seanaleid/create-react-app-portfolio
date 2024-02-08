@@ -6,10 +6,6 @@ import clsx from 'clsx';
 // import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-// import { siteStyles } from "../utils/siteStyle";
-
-// import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-// import Grid from "@material-ui/core/Grid";
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 import Drawer from '@material-ui/core/Drawer';
@@ -18,32 +14,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-// import ListItemText from '@material-ui/core/ListItemText';
-
-// import {useDarkMode} from "../hooks/useDarkMode.js";
 
 const drawerWidth = '100%';
-
-// function ElevationScroll(props) {
-//   const { children, window } = props;
-//   // Note that you normally won't need to set the window ref as useScrollTrigger
-//   // will default to window.
-//   // This is only being set here because the demo is in an iframe.
-//   const trigger = useScrollTrigger({
-//     disableHysteresis: true,
-//     threshold: 0,
-//     target: window ? window() : undefined,
-//   });
-
-//   return React.cloneElement(children, {
-//     elevation: trigger ? 4 : 0,
-//   });
-// }
-
-// ElevationScroll.propTypes = {
-//   children: PropTypes.element.isRequired,
-//   window: PropTypes.func,
-// };
 
 const useStyles = makeStyles((theme) => ({
 
@@ -71,14 +43,14 @@ const useStyles = makeStyles((theme) => ({
     width: "8vw",
     flexDirection: "column-reverse",
     justifyContent: "space-evenly",
-    zIndex: "1000"
-    // background: "red"
+    zIndex: "1000",
+    // border: "1px solid red"
   },
   menuIconToolbar: {
     width: "10vw",
   },
   text: {
-    fontSize: "14px",
+    fontSize: "0.875rem",
     display: "flex",
     justifyContent: "flex-end",
     transform: "rotate(-90deg)", 
