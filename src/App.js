@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
+
 // import {colorz} from "./components/colors.js"
 import { makeStyles } from "@material-ui/core/styles";
 

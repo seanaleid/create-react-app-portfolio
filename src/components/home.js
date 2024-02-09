@@ -7,17 +7,24 @@ import PropTypes from "prop-types";
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 
+// marquee slider
+import Marquee from "react-marquee-slider";
+import times from "lodash/times";
+
 const useStyles = makeStyles({
   box: {
     // border: "1px solid pink",
     maxHeight: "100vh",
+    maxWidth: "100%",
     zIndex: "2"
   },
   titleTop: {
-    // border: "1px solid pink",
-    maxHeight: "100vh",
+    // border: "1px solid red",
+    height: "100%",
     display: "flex",
-    overflow: "hidden"
+    overflow: "hidden",
+    flexDirection: "column",
+    justifyContent: "flex-end"
   },
   hiddenTitleTop: {
     display: "flex",
@@ -26,11 +33,12 @@ const useStyles = makeStyles({
   },
   lastName: {
     position: "absolute",
-    right: "25vw",
-    bottom: "38vh",
+    right: "11rem",
+    bottom: "28rem",
+    fontSize: "8rem",
     fontWeight: "500",
     fontFamily: "ValkyRegular",
-    // border: "1px solid pink",
+    // border: "1px solid orange",
     // color: 'rgba(64, 1, 30, 1)',
   },
   hiddenLastName: {
@@ -42,9 +50,23 @@ const useStyles = makeStyles({
   firstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
-    fontSize: "33rem",
+    fontSize: "42rem",
     // border: "1px solid pink",
+    position: "absolute",
+    bottom: "-5rem",
     // color: 'rgba(64, 1, 30, 1)',
+  },
+  tickerBox: {
+    display: "flex",
+    width: "dvw",
+    // border: "1px solid pink",
+  },
+  tickerText: {
+    fontFamily: "DM Sans, sans-serif",
+    fontSize: "48px",
+    fontWeight: "500",
+    fontStyle: "italic",
+    margin: "0px"
   },
   hiddenFirstName: {
     fontWeight: "1000",
@@ -69,18 +91,33 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       <Hidden smDown>
         <Container className={classes.box}>
           <div className={classes.titleTop}>
-            <h1 
-              className={classes.firstName} 
-              style={{"color": `${colors.primary}`}}
-            >
-              Sean</h1>
-            <Typography 
-              variant="h3" 
-              className={classes.lastName}
-              style={{"color": `${colors.primary}`}}
-            >
-              NALEID VARGAS
-            </Typography>
+            <div>
+              <Typography 
+                variant="h1" 
+                className={classes.firstName} 
+                style={{"color": `${colors.primary}`}}
+              >
+                Sean</Typography>
+              <Typography 
+                variant="h3" 
+                className={classes.lastName}
+                style={{"color": `${colors.primary}`}}
+              >
+                NALEID VARGAS
+              </Typography>
+            </div>
+            <div className={classes.tickerBox}>
+              <Marquee velocity={45} minScale={1} resetAfterTries={200}>
+                {times(1, String).map((id) => (
+                    <h2 key={`marquee-${id}`} 
+                    className={classes.tickerText}
+                    style={{"color": `${colors.primary}`}}
+                    >
+                    ◦ PROJECT MANAGER ◦ LEADER ◦ EDUCATOR ◦ SOFTWARE DEVELOPER ◦ DESIGNER ◦ PRODUCT OWNER    
+                    </h2>
+                ))}
+              </Marquee>
+            </div>
           </div>
         </Container>
       </Hidden>
