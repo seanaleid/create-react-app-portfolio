@@ -147,13 +147,10 @@ const About = ({colors}) => {
                 }} 
               >
                 Kitestring Technical Consultants.
-              </a> I&#39;ve worn various hats, from teaching to translating, coding, managing projects, and even trying my hand at being a startup CTO. 
+              </a> Beyond the professional realm, I&#39;m all about bringing my mishmash of experiences to life. Whether it&#39;s working on a new coding project, delving into creative design, or experimenting with an idea, I&#39;m constantly exploring the vast landscape where technology and creativity collide.
           </Typography>
           <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
-            Teaching showed me the power of education, and the tech world introduced me to the art of coding and design. Managing diverse teams taught me a thing or two about orchestrating projects effectively.
-          </Typography>
-          <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
-          Now, as a Product Owner, I bring this mishmash of experiences to the table. I&#39;m all about the sweet spot where technology and creativity meet. Let&#39;s make problem-solving less of a chore and more of an adventure. Let&#39;s navigate this exciting journey together!
+            I&#39;m all about the sweet spot where technology and creativity meet. Let&#39;s make problem-solving less of a chore and more of an adventure. Let&#39;s navigate this exciting journey together!
           </Typography>
           <Container className={classes.inside}>
             <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>

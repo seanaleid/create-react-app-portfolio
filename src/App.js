@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
       color: 'rgba(64, 1, 30, 1)',
+      cursor: "pointer"
     },
     cut: {
       height: "500px",
