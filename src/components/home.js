@@ -34,7 +34,7 @@ const useStyles = makeStyles({
   lastName: {
     position: "absolute",
     right: "11rem",
-    bottom: "28rem",
+    bottom: "33rem",
     fontSize: "8rem",
     fontWeight: "500",
     fontFamily: "ValkyRegular",
@@ -47,24 +47,36 @@ const useStyles = makeStyles({
     fontSize: "1.8rem",
     // border: "1px solid pink",
   },
+  firstNameBox: {
+    // border: "1px solid green ",
+    height: "41.5rem",
+    overflow: "hidden",
+    display: "flex",
+    // backgroundColor: "powderBlue",
+  },
   firstName: {
     fontWeight: "1000",
     fontFamily: "ValkyRegular",
     fontSize: "42rem",
-    // border: "1px solid pink",
+    // border: "1px solid orange",
     position: "absolute",
-    bottom: "-5rem",
+    bottom: "7rem",
+    height: "40rem",
+    marginBottom: "0px",
+    lineHeight: "110%",
     // color: 'rgba(64, 1, 30, 1)',
   },
   tickerBox: {
     display: "flex",
     width: "dvw",
+    height: "8rem",
+    zIndex: "2",
     // border: "1px solid pink",
   },
   tickerText: {
     fontFamily: "DM Sans, sans-serif",
-    fontSize: "48px",
-    fontWeight: "500",
+    fontSize: "70px",
+    fontWeight: "300",
     fontStyle: "italic",
     margin: "0px"
   },
@@ -92,12 +104,14 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         <Container className={classes.box}>
           <div className={classes.titleTop}>
             <div>
-              <Typography 
-                variant="h1" 
-                className={classes.firstName} 
-                style={{"color": `${colors.primary}`}}
-              >
-                Sean</Typography>
+              <div className={classes.firstNameBox}>
+                <Typography 
+                  variant="h1" 
+                  className={classes.firstName} 
+                  style={{"color": `${colors.primary}`}}
+                >
+                  Sean</Typography>
+              </div>
               <Typography 
                 variant="h3" 
                 className={classes.lastName}

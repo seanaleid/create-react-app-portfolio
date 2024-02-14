@@ -22,7 +22,8 @@ import { siteStyles } from "./utils/siteStyle.js";
 const useStyles = makeStyles((theme) => ({
     layout: {
       display: "flex",
-      overflow: "clip"
+      overflow: "hidden",
+      // border: "1px solid red ",
     }, 
     iconBox: {
       height: "8rem",
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
       color: 'rgba(64, 1, 30, 1)',
       cursor: "pointer"
     },
-    cut: {
+    cutLeft: {
       height: "500px",
       width: "1000px", 
       position: "absolute",
@@ -51,6 +52,15 @@ const useStyles = makeStyles((theme) => ({
       position: "inherit",
       right: "5%",
       borderRadius: "50%"
+    },
+    cutRight: {
+      height: "800px",
+      width: "1000px", 
+      position: "absolute",
+      top: "0%",
+      right: "0%",
+      overflow: "hidden",
+      padding: "2rem"
     },
     dotRight: {
       height: "750px",
@@ -102,19 +112,20 @@ function App() {
           }}
         />
       </div>
-      <div className={classes.cut}>
+      <div className={classes.cutLeft}>
         <div className={classes.dotLeft}
           style={{background: `${colors.leftRadial}`,
           boxShadow: `${colors.leftShadow}`
           }}
         />
       </div>
-      <span className={classes.dotRight}
-        style={{background: `${colors.rightRadial}`,
-          boxShadow: `${colors.rightShadow}`,
-        }}
-      />
-    
+      <div className={classes.cutRight}>
+        <span className={classes.dotRight}
+          style={{background: `${colors.rightRadial}`,
+            boxShadow: `${colors.rightShadow}`,
+          }}
+        />
+      </div>
     </div>
   );
 }
