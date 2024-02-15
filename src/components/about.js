@@ -8,6 +8,7 @@ import GitHub from '@material-ui/icons/GitHub';
 import Twitter from '@material-ui/icons/Twitter';
 import MailOutlineOutlined from '@material-ui/icons/MailOutlineOutlined';
 import LinkedIn from '@material-ui/icons/LinkedIn';
+import CallReceived from '@material-ui/icons/CallReceived';
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 
@@ -107,15 +108,41 @@ const useStyles = makeStyles({
   },
   resumeLink: {
     border: "1px solid pink",
+    display: "flex",
+    paddingLeft: "0px",
+    marginBottom: "0.5rem"
   },
   linkBox: {
     display: "flex",
-    border: "1px solid red"
+    border: "1px solid red",
+    paddingLeft: "0px",
+    justifyContent: "flex-start"
+  },
+  avatar: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: "1rem",
+    backgroundColor: "transparent"
+  },
+  avatarDownload: {
+    border: "1px solid pink",
+    display: "block"
   },
   icon: {
     height: "2rem",
     width: "2rem",
-    marginRight: "0.5rem",
+  },
+  iconDownload: {
+    height: "1rem",
+    width: "1rem",
+    border: "1px solid powderBlue",
+    transform: "scaleX(-1)",
+    "&:hover": {
+      transform: "scaleX(-1) translate(-20px, 12px)"
+    }
+    // bottom of the avatar box movement 
+    //transform: "scaleX(-1) translate(-20px, 12px)" ,
   },
   button: {
     fontFamily: "Roboto",
@@ -157,7 +184,7 @@ const About = ({colors}) => {
               <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
             </Hidden>
             <br />
-            <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
+            <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`, lineHeight: "250%"}}>
               Hey there, I&#39;m <span className={classes.bolded}>Sean</span>—a problem-solver and perpetual learner currently navigating the <span className={classes.bolded}>Product Owner</span> role at 
                 <a 
                   href="https://www.kitestring.com/" 
@@ -176,14 +203,23 @@ const About = ({colors}) => {
                 </a> Beyond the professional realm, I&#39;m all about leveraging my mishmash of experiences. Whether it&#39;s working on a new coding project, delving into creative design, or experimenting with an idea, I&#39;m constantly exploring the vast landscape where technology and creativity collide.
             </Typography>
             <br />
-            <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`}}>
+            <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`, lineHeight: "250%"}}>
             This website is my playground, a space where I share my personal projects. It&#39;s one part notebook where I share notes on my thought process. One part sketchbook where I post designs. One part dev portfolio highlighting my coding projects. From experiments to more refined endeavors, consider this an open invitation to join me. <span className={classes.bolded}>Let&#39;s navigate this exciting journey together!</span>
             </Typography>
           </Container>
 
           <Container className={classes.resumeBox}>
-            <Container className={classes.resumeBox}>
-              <Typography variant="h6">
+            <Container className={classes.resumeLink}>
+              <Avatar variant="square" className={classes.avatarDownload} style={{backgroundColor: `${colors.text}`}}>
+                <a 
+                  href="mailto:seannaleidvargas@gmail.com"
+                  target="_blank" 
+                  rel="noreferrer"
+                >
+                  <CallReceived className={classes.iconDownload} style={{color: `${colors.primary}`}}/>
+                </a>
+              </Avatar>
+              <Typography variant="h6" style={{backgroundColor: `${colors.text}`, fontSize: "24px",}}>
                 Download my résumé
               </Typography>
             </Container>
