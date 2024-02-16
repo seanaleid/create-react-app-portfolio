@@ -5,7 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
 import Avatar from '@material-ui/core/Avatar';
 import GitHub from '@material-ui/icons/GitHub';
-import Twitter from '@material-ui/icons/Twitter';
+// import Twitter from '@material-ui/icons/Twitter';
+import XIcon from '@mui/icons-material/X';
 import MailOutlineOutlined from '@material-ui/icons/MailOutlineOutlined';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import CallReceived from '@material-ui/icons/CallReceived';
@@ -14,6 +15,9 @@ import withWidth from '@material-ui/core/withWidth';
 
 // import font styles
 import { fontStyles } from "../utils/fontStyle.js";
+
+// import color styles
+// import { siteStyles } from "../utils/siteStyle.js";
 
 const useStyles = makeStyles({
   box: {
@@ -32,7 +36,7 @@ const useStyles = makeStyles({
     // alignItems: "center"
   },
   rightContainer: {
-    border: "1px solid orange",
+    // border: "1px solid orange",
     paddingTop: "5rem",
     maxWidth: "65%",
     display: "flex",
@@ -62,7 +66,7 @@ const useStyles = makeStyles({
   },
   textBox: {
     paddingLeft: "0px",
-    border: "1px solid green",
+    // border: "1px solid green",
     marginBottom: "3rem"
   },
   text: {
@@ -107,14 +111,14 @@ const useStyles = makeStyles({
     paddingLeft: "0px",
   },
   resumeLink: {
-    border: "1px solid pink",
+    // border: "1px solid pink",
     display: "flex",
     paddingLeft: "0px",
     marginBottom: "0.5rem"
   },
   linkBox: {
     display: "flex",
-    border: "1px solid red",
+    // border: "1px solid red",
     paddingLeft: "0px",
     justifyContent: "flex-start"
   },
@@ -123,11 +127,19 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     marginRight: "1rem",
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    height: "3.8rem",
+    width: "3.8rem",
+    // border: "1px solid green",
+    "&:hover": {
+      // backgroundColor: "rgba(64, 1, 30, 1)",
+      cursor: "pointer"
+    }
   },
   avatarDownload: {
     border: "1px solid pink",
-    display: "block"
+    display: "block",
+    backgroundColor: "transparent"
   },
   icon: {
     height: "2rem",
@@ -153,13 +165,14 @@ const useStyles = makeStyles({
     } 
   },
   linkText: {
-    textDecoration: "none",
+    // textDecoration: "none",
     paddingLeft: "5px",
-    fontWeight: "500",
-    fontFamily: 'Roboto',
-    "&:hover": {
-      fontWeight: "600",
-    },
+    fontWeight: "800",
+    color: "rgba(64, 1, 30, 1)",
+    fontFamily: `${fontStyles.text}`,
+    // "&:hover": {
+    //   fontWeight: "600",
+    // },
   },
 });
 
@@ -192,14 +205,13 @@ const About = ({colors}) => {
                   target="_blank"
                   rel="noreferrer"
                   className={classes.linkText}
-                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                  onMouseLeave={() => {setHover(false)}}
-                  style={{
-                    color: (hover && hoverId === "kitestring" ? `${colors.highlight}` : `${colors.primary}`),
-                    textDecoration: (hover && hoverId === "kitestring" ? 'underline' : null),
-                  }} 
+                  // onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  // onMouseLeave={() => {setHover(false)}}
+                  // style={{
+                  //   textDecoration: (hover && hoverId === "kitestring" ? 'underline' : null),
+                  // }} 
                 >
-                  <span className={classes.bolded}>Kitestring Technical Consultants.</span>
+                  Kitestring Technical Consultants.
                 </a> Beyond the professional realm, I&#39;m all about leveraging my mishmash of experiences. Whether it&#39;s working on a new coding project, delving into creative design, or experimenting with an idea, I&#39;m constantly exploring the vast landscape where technology and creativity collide.
             </Typography>
             <br />
@@ -219,45 +231,109 @@ const About = ({colors}) => {
                   <CallReceived className={classes.iconDownload} style={{color: `${colors.primary}`}}/>
                 </a>
               </Avatar>
-              <Typography variant="h6" style={{backgroundColor: `${colors.text}`, fontSize: "24px",}}>
+              <Typography 
+                variant="h6" 
+                id="resume"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  fontSize: "24px",
+                  color:`${colors.primary}`,
+                  textDecoration: (hover && hoverId === 'resume' ? `underline` : null),
+                  textDecorationColor: (hover && hoverId === 'resume' ? `${colors.primary}` : null),
+                }} 
+                // style={{backgroundColor: `${colors.text}`, color:`${colors.primary}`, }}
+              >
                 Download my résumé
               </Typography>
             </Container>
             <Container className={classes.linkBox}>
-              <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <Avatar 
+                className={classes.avatar} 
+                id="email"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  backgroundColor: (hover && hoverId === 'email' ? `${colors.primary}` : `${colors.background}`),
+                }} 
+              >
                 <a 
                   href="mailto:seannaleidvargas@gmail.com"
                   target="_blank" 
                   rel="noreferrer"
                 >
-                  <MailOutlineOutlined className={classes.icon} style={{color: `${colors.primary}`}}/>
+                  <MailOutlineOutlined 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'email' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
                 </a>
               </Avatar>
-              <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <Avatar 
+                className={classes.avatar} 
+                id="linkedin"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  backgroundColor: (hover && hoverId === 'linkedin' ? `${colors.primary}` : `${colors.background}`),
+                }} 
+              >
                 <a 
                   href="https://www.linkedin.com/in/sean-naleid-vargas/"
                   target="_blank" 
                   rel="noreferrer"
                 >
-                  <LinkedIn className={classes.icon} style={{color: `${colors.primary}`}}/>
+                  <LinkedIn 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'linkedin' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
                 </a>
               </Avatar>
-              <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <Avatar 
+                className={classes.avatar} 
+                id="github"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  backgroundColor: (hover && hoverId === 'github' ? `${colors.primary}` : `${colors.background}`),
+                }} 
+              >
                 <a 
                   href="https://www.github.com/seanaleid"
                   target="_blank" 
                   rel="noreferrer"
                 >
-                  <GitHub className={classes.icon} style={{color: `${colors.primary}`}}/>
+                  <GitHub 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'github' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
                 </a>
               </Avatar>
-              <Avatar className={classes.avatar} style={{backgroundColor: `${colors.text}`}}>
+              <Avatar 
+                className={classes.avatar} 
+                id="twitterX"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  backgroundColor: (hover && hoverId === 'twitterX' ? `${colors.primary}` : `${colors.background}`),
+                }} 
+              >
                 <a 
                   href="https://twitter.com/SeanNaleid"
                   target="_blank" 
                   rel="noreferrer"
                 >
-                  <Twitter className={classes.icon} style={{color: `${colors.primary}`}}/>
+                  <XIcon 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'twitterX' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
                 </a>
               </Avatar>
             </Container>
