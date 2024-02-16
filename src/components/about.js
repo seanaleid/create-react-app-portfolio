@@ -165,14 +165,13 @@ const useStyles = makeStyles({
     } 
   },
   linkText: {
-    // textDecoration: "none",
+    // textDecorationColor: "rgba(64, 1, 30, 1)",
+    textDecoration: "none",
     paddingLeft: "5px",
     fontWeight: "800",
     color: "rgba(64, 1, 30, 1)",
-    fontFamily: `${fontStyles.text}`,
-    // "&:hover": {
-    //   fontWeight: "600",
-    // },
+    // fontFamily: `${fontStyles.text}`,
+    fontFamily: `Montserrat, sans-serif`,
   },
 });
 
@@ -205,11 +204,13 @@ const About = ({colors}) => {
                   target="_blank"
                   rel="noreferrer"
                   className={classes.linkText}
-                  // onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                  // onMouseLeave={() => {setHover(false)}}
-                  // style={{
-                  //   textDecoration: (hover && hoverId === "kitestring" ? 'underline' : null),
-                  // }} 
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    textDecoration: (hover && hoverId === 'kitestring' ? `underline` : null),
+                    textDecorationColor: (hover && hoverId === 'kitestring' ? `${colors.primary}` : null),
+                    cursor: (hover && hoverId === 'kitestring' ? "pointer" : null)
+                  }} 
                 >
                   Kitestring Technical Consultants.
                 </a> Beyond the professional realm, I&#39;m all about leveraging my mishmash of experiences. Whether it&#39;s working on a new coding project, delving into creative design, or experimenting with an idea, I&#39;m constantly exploring the vast landscape where technology and creativity collide.
@@ -241,6 +242,7 @@ const About = ({colors}) => {
                   color:`${colors.primary}`,
                   textDecoration: (hover && hoverId === 'resume' ? `underline` : null),
                   textDecorationColor: (hover && hoverId === 'resume' ? `${colors.primary}` : null),
+                  cursor: (hover && hoverId === 'resume' ? "pointer" : null)
                 }} 
                 // style={{backgroundColor: `${colors.text}`, color:`${colors.primary}`, }}
               >
