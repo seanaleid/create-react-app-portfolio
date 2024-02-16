@@ -13,8 +13,27 @@ import withWidth from '@material-ui/core/withWidth';
 
 const useStyles = makeStyles({
   box: {
-    margin: "0 auto",
-    maxWidth: "1000px",
+    maxWidth: "100vw",
+    zIndex: "2",
+    // border: "1px solid blue",
+    display: "flex",
+    justifyContents: "flexStart"
+  },
+  leftContainer: {
+    border: "1px solid green",
+    maxWidth: "35%",
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: "5rem"
+    // alignItems: "center"
+  },
+  rightContainer: {
+    border: "1px solid orange",
+    paddingTop: "5rem",
+    maxWidth: "65%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start"
   },
   titleNav: {
     display: "flex",
@@ -54,9 +73,17 @@ const Projects = ({colors}) => {
   return (
     <React.Fragment>
       <Container className={classes.box}>
+      <Container className={classes.leftContainer}>
         <Hidden smDown>
           <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Projects</Typography>
         </Hidden>
+      </Container>
+      <Container className={classes.rightContainer}>
+        <Hidden smDown>
+          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Projects</Typography>
+        </Hidden>
+      </Container>
+        
         <Hidden mdUp>
           <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Projects</Typography>
         </Hidden>
