@@ -16,9 +16,6 @@ import withWidth from '@material-ui/core/withWidth';
 // import font styles
 import { fontStyles } from "../utils/fontStyle.js";
 
-// import color styles
-// import { siteStyles } from "../utils/siteStyle.js";
-
 const useStyles = makeStyles({
   box: {
     maxWidth: "100vw",
@@ -107,7 +104,7 @@ const useStyles = makeStyles({
     fontWeight: "700"
   },
   resumeBox: {
-    border: "1px solid pink",
+    // border: "1px solid pink",
     paddingLeft: "0px",
   },
   resumeLink: {
@@ -137,7 +134,7 @@ const useStyles = makeStyles({
     }
   },
   avatarDownload: {
-    border: "1px solid pink",
+    // border: "1px solid pink",
     display: "block",
     backgroundColor: "transparent"
   },
@@ -148,11 +145,11 @@ const useStyles = makeStyles({
   iconDownload: {
     height: "1rem",
     width: "1rem",
-    border: "1px solid powderBlue",
+    // border: "1px solid powderBlue",
     transform: "scaleX(-1)",
-    "&:hover": {
-      transform: "scaleX(-1) translate(-20px, 12px)"
-    }
+    // "&:hover": {
+    //   transform: "scaleX(-1) translate(-20px, 12px)"
+    // }
     // bottom of the avatar box movement 
     //transform: "scaleX(-1) translate(-20px, 12px)" ,
   },
@@ -168,7 +165,7 @@ const useStyles = makeStyles({
     // textDecorationColor: "rgba(64, 1, 30, 1)",
     textDecoration: "none",
     paddingLeft: "5px",
-    fontWeight: "800",
+    fontWeight: "600",
     color: "rgba(64, 1, 30, 1)",
     // fontFamily: `${fontStyles.text}`,
     fontFamily: `Montserrat, sans-serif`,
@@ -209,7 +206,8 @@ const About = ({colors}) => {
                   style={{
                     textDecoration: (hover && hoverId === 'kitestring' ? `underline` : null),
                     textDecorationColor: (hover && hoverId === 'kitestring' ? `${colors.primary}` : null),
-                    cursor: (hover && hoverId === 'kitestring' ? "pointer" : null)
+                    cursor: (hover && hoverId === 'kitestring' ? "pointer" : null),
+                    color: `${colors.primary}`
                   }} 
                 >
                   Kitestring Technical Consultants.
@@ -222,15 +220,20 @@ const About = ({colors}) => {
           </Container>
 
           <Container className={classes.resumeBox}>
-            <Container className={classes.resumeLink}>
+            <Container 
+              className={classes.resumeLink}
+              id="download"
+              onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+              onMouseLeave={() => {setHover(false)}}
+            >
               <Avatar variant="square" className={classes.avatarDownload} style={{backgroundColor: `${colors.text}`}}>
-                <a 
-                  href="mailto:seannaleidvargas@gmail.com"
-                  target="_blank" 
-                  rel="noreferrer"
-                >
-                  <CallReceived className={classes.iconDownload} style={{color: `${colors.primary}`}}/>
-                </a>
+                  <CallReceived  
+                    className={classes.iconDownload} 
+                    style={{
+                      color: `${colors.primary}`,
+                      transform: (hover && hoverId === 'resume' ? "scaleX(-1) translate(-20px, 15px)" : null),
+                    }}
+                  />
               </Avatar>
               <Typography 
                 variant="h6" 
@@ -242,9 +245,9 @@ const About = ({colors}) => {
                   color:`${colors.primary}`,
                   textDecoration: (hover && hoverId === 'resume' ? `underline` : null),
                   textDecorationColor: (hover && hoverId === 'resume' ? `${colors.primary}` : null),
-                  cursor: (hover && hoverId === 'resume' ? "pointer" : null)
+                  cursor: (hover && hoverId === 'resume' ? "pointer" : null),
+                  fontWeight: (hover && hoverId === 'resume' ? "800" : null),
                 }} 
-                // style={{backgroundColor: `${colors.text}`, color:`${colors.primary}`, }}
               >
                 Download my résumé
               </Typography>
