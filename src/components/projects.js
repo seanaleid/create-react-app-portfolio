@@ -7,9 +7,8 @@ import { Typography } from "@material-ui/core";
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 
-// components
-// import Projects from "./projects.js";
-// import Designs from "./designs.js";
+// import font styles
+import { fontStyles } from "../utils/fontStyle.js";
 
 const useStyles = makeStyles({
   box: {
@@ -22,10 +21,9 @@ const useStyles = makeStyles({
   leftContainer: {
     border: "1px solid green",
     maxWidth: "35%",
+    paddingTop: "5rem",
     display: "flex",
-    justifyContent: "center",
-    paddingTop: "5rem"
-    // alignItems: "center"
+    flexDirection: "column",
   },
   rightContainer: {
     border: "1px solid orange",
@@ -45,10 +43,11 @@ const useStyles = makeStyles({
   },
   title: {
     fontWeight: "1000",
-    fontFamily: "Fjalla one",
-    marginTop: "3rem",
-    marginBottom: "3rem",
-    fontSize: "6rem",
+    fontFamily: `${fontStyles.text}`,
+    border: "1px solid orange",
+    fontSize: "2.25rem",
+    // marginTop: "3rem",
+    // marginBottom: "3rem",
     // textDecoration: "none",
   },
   titleCenter: {
@@ -58,7 +57,39 @@ const useStyles = makeStyles({
     marginBottom: "3rem",
     display: "flex",
     justifyContent: "center",
-  }
+  },
+  text: {
+    marginBottom: "1rem",
+    fontFamily: `${fontStyles.text}`,
+    textAlign: "justify",
+  },
+  projectContainer: {
+    border: "1px solid pink",
+    display: "flex",
+    padding: "0px"
+  },
+  projectLeftContainer: {
+    maxWidth: "30%",
+    border: "1px solid blue",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  image: {
+    height: "11.93rem",
+    width: "16.43rem",
+    borderRadius: "0.5rem"
+  },
+  year: {
+    marginTop: "1.2rem",
+    fontFamily: `${fontStyles.text}`,
+    textAlign: "justify",
+  },
+  projectRightContainer: {
+    maxWidth: "70%",
+    border: "1px solid green",
+  },
 });
 
 const Projects = ({colors}) => {
@@ -75,12 +106,29 @@ const Projects = ({colors}) => {
       <Container className={classes.box}>
       <Container className={classes.leftContainer}>
         <Hidden smDown>
-          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Projects</Typography>
+          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Check out my work</Typography>
+          <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`, lineHeight: "250%"}}>
+            This is a showcase of the different types of projects I have worked on in a designing, coding, leading, or managing role. 
+          </Typography>
+          <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`, lineHeight: "250%"}}>
+            As the worlds of software development and product evolve, so does my role. I am continually learning and adding to my skillset. 
+          </Typography>
         </Hidden>
       </Container>
       <Container className={classes.rightContainer}>
         <Hidden smDown>
-          <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Projects</Typography>
+        <Container className={classes.projectContainer}>
+          <Container className={classes.projectLeftContainer}>
+            <img src="https://kobalt-pics.s3.amazonaws.com/developer/Screen+Recording+2020-12-30+at+10.58.03+PM.gif"
+              className={classes.image}
+            ></img>
+            <Typography variant="h6" className={classes.year} style={{color:`${colors.primary}`}}
+            >2019</Typography>
+          </Container>
+          <Container className={classes.projectRightContainer}>
+
+          </Container>
+        </Container>
         </Hidden>
       </Container>
         
