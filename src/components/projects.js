@@ -19,14 +19,14 @@ const useStyles = makeStyles({
     justifyContents: "flexStart"
   },
   leftContainer: {
-    border: "1px solid green",
+    // border: "1px solid green",
     maxWidth: "35%",
     paddingTop: "5rem",
     display: "flex",
     flexDirection: "column",
   },
   rightContainer: {
-    border: "1px solid orange",
+    // border: "1px solid orange",
     paddingTop: "5rem",
     maxWidth: "65%",
     display: "flex",
@@ -44,7 +44,7 @@ const useStyles = makeStyles({
   title: {
     fontWeight: "1000",
     fontFamily: `${fontStyles.text}`,
-    border: "1px solid orange",
+    // border: "1px solid orange",
     fontSize: "2.25rem",
     // marginTop: "3rem",
     // marginBottom: "3rem",
@@ -63,33 +63,35 @@ const useStyles = makeStyles({
     fontFamily: `${fontStyles.text}`,
     textAlign: "justify",
   },
-  projectContainer: {
-    border: "1px solid pink",
-    display: "flex",
-    padding: "0px"
-  },
-  projectLeftContainer: {
-    maxWidth: "30%",
-    border: "1px solid blue",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  image: {
-    height: "11.93rem",
-    width: "16.43rem",
-    borderRadius: "0.5rem"
-  },
-  year: {
-    marginTop: "1.2rem",
-    fontFamily: `${fontStyles.text}`,
-    textAlign: "justify",
-  },
-  projectRightContainer: {
-    maxWidth: "70%",
-    border: "1px solid green",
-  },
+  // projectContainer: {
+  //   border: "1px solid pink",
+  //   display: "flex",
+  //   padding: "0px", 
+  //   borderRadius: "10px"
+  // },
+  // projectLeftContainer: {
+  //   maxWidth: "30%",
+  //   border: "1px solid blue",
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   justifyContent: "center",
+  //   alignItems: "center"
+  // },
+  // image: {
+  //   height: "11.93rem",
+  //   width: "16.43rem",
+  //   borderRadius: "0.5rem",
+  //   margin: "1rem 0rem 0rem 0rem"
+  // },
+  // year: {
+  //   marginTop: "1.2rem",
+  //   fontFamily: `${fontStyles.text}`,
+  //   textAlign: "justify",
+  // },
+  // projectRightContainer: {
+  //   maxWidth: "70%",
+  //   border: "1px solid green",
+  // },
 });
 
 const Projects = ({colors}) => {
@@ -117,18 +119,7 @@ const Projects = ({colors}) => {
       </Container>
       <Container className={classes.rightContainer}>
         <Hidden smDown>
-        <Container className={classes.projectContainer}>
-          <Container className={classes.projectLeftContainer}>
-            <img src="https://kobalt-pics.s3.amazonaws.com/developer/Screen+Recording+2020-12-30+at+10.58.03+PM.gif"
-              className={classes.image}
-            ></img>
-            <Typography variant="h6" className={classes.year} style={{color:`${colors.primary}`}}
-            >2019</Typography>
-          </Container>
-          <Container className={classes.projectRightContainer}>
-
-          </Container>
-        </Container>
+          <Typography variant="h6">Hello</Typography>
         </Hidden>
       </Container>
         
