@@ -21,10 +21,11 @@ export const projectDetails = [
       title: "Replate",
       duration: "2019 - 1 week",
       thumbnail: "https://kobalt-pics.s3.amazonaws.com/developer/Replate.gif",
-      description: [],
-      demo: "",
-      code: "",
-      roles: []
+      description: ["Replate was a Build Week project while I was a Team Lead at Lambda. Build Week brings together a cross functional team of students to build a project. To successfully complete the week long challenge, Replate required a frontend, backend, and marketing site. My role as project manager was to identify the tasks and help the full stack developers complete them within the deadline."
+      ],
+      demo: "https://replate-seven.now.sh/",
+      code: "https://github.com/Replate1",
+      roles: ["Project Manager"]
     }
 ];
 

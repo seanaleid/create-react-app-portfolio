@@ -40,21 +40,19 @@ const useStyles = makeStyles({
   },
 });
 
-const ProjectCard = ({colors}) => {
+const ProjectCard = ({details}) => {
   const classes = useStyles();
+  
+  console.log(details)
 
   return (
     <React.Fragment>
       <Container className={classes.projectContainer}>
         <Container className={classes.projectLeftContainer}>
-          <img src="https://kobalt-pics.s3.amazonaws.com/developer/Screen+Recording+2020-12-30+at+10.58.03+PM.gif"
-            className={classes.image}
-          ></img>
-          <Typography variant="h6" className={classes.year} style={{color:`${colors.primary}`}}
-          >2019</Typography>
+          Hello
         </Container>
         <Container className={classes.projectRightContainer}>
-
+          <Typography variant="h6">{details[1].title}</Typography>
         </Container>        
       </Container>
     </React.Fragment>
@@ -62,7 +60,7 @@ const ProjectCard = ({colors}) => {
 };
 
 ProjectCard.propTypes = {
-  colors: PropTypes.object,
+  details: PropTypes.object,
   width: PropTypes.oneOf(['lg', 'md', 'sm', 'xl', 'xs']).isRequired,
 };
 
