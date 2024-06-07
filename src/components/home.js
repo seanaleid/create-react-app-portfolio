@@ -127,7 +127,7 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     className={classes.tickerText}
                     style={{"color": `${colors.primary}`}}
                     >
-                    ◦ PROJECT MANAGER ◦ LEADER ◦ EDUCATOR ◦ SOFTWARE DEVELOPER ◦ DESIGNER ◦ PRODUCT OWNER    
+                    PRODUCT OWNER ◦ PRODUCT MANGER ◦ PROJECT MANAGER ◦ LEADER ◦ PROBLEM SOLVER ◦ EDUCATOR ◦ SOFTWARE DEVELOPER ◦ DESIGNER ◦     
                     </h2>
                 ))}
               </Marquee>
