@@ -95,7 +95,7 @@ const {colors} = props;
             </Typography>
             {/* <TypeWriter/> */}
             <ReactRotatingText 
-              items={["a software developer.", "a project manager.", "a problem solver.", "a leader.", "an educator.", "a designer."]}
+              items={["a product manager.", "a product owner.", "a project manager.", "a problem solver.", "a leader.", "an educator.", "a software developer.", "a designer."]}
               className={classes.typewriter}
               color={colors.home}
             />
