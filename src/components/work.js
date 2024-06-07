@@ -9,7 +9,7 @@ import withWidth from '@material-ui/core/withWidth';
 
 // components
 import Projects from "./projects.js";
-import Designs from "./designs.js";
+// import Designs from "./designs.js";
 
 const useStyles = makeStyles({
   box: {
@@ -57,7 +57,6 @@ const Work = ({colors}) => {
         <Hidden smDown>
           <nav className={classes.titleNav}>
             <Link to="/work/projects" id="projectsLink" className={classes.title} style={slug === "projects" ? {color: `${colors.projects}`} : {color: `${colors.text}`, textDecoration: "none"}} >Projects</Link>
-            <Link to="/work/designs" id="designsLink" className={classes.title} style={slug === "designs" ? {color: `${colors.projects}`} : {color: `${colors.text}`, textDecoration: "none"}}>Designs</Link>
           </nav>
         </Hidden>
         {/* <Hidden mdUp>
@@ -65,7 +64,7 @@ const Work = ({colors}) => {
         </Hidden> */}
         <Route path="/work/projects" render={props => <Projects {...props} colors={colors}/>}/>
         {/* <Route exact path="/work/designs" render={props => <Designs {...props} colors={colors}/>}/> */}
-        <Route path="/work/designs" render={props => <Designs {...props} colors={colors}/>}/>
+        {/* <Route path="/work/designs" render={props => <Designs {...props} colors={colors}/>}/> */}
       </Container>
     </React.Fragment>
   );
