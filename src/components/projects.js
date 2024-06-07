@@ -11,8 +11,8 @@ import withWidth from '@material-ui/core/withWidth';
 import { fontStyles } from "../utils/fontStyle.js";
 
 // import component
-import ProjectCard from "./projectCard.js";
-import { projectDetails } from "./projectDetails.js";
+// import ProjectCard from "./projectCard.js";
+// import { projectDetails } from "./projectDetails.js";
 
 const useStyles = makeStyles({
   box: {
@@ -106,7 +106,7 @@ const Projects = ({colors}) => {
   // const [slug, setSlug] = useState(history.pathname.split("/")[2]);
   // const [designs, setDesigns] = useState(false);
   // console.log('SLUG', setSlug());
-  console.log(projectDetails)
+  // console.log(projectDetails)
 
   return (
     <React.Fragment>
@@ -125,7 +125,7 @@ const Projects = ({colors}) => {
       <Container className={classes.rightContainer}>
         <Hidden smDown>
           <Typography variant="h6">Hello</Typography>
-          <ProjectCard details={projectDetails}/>
+          {/* <ProjectCard details={projectDetails}/> */}
           {/* projectDetails.map((x,i) => x) */}
         </Hidden>
       </Container>
