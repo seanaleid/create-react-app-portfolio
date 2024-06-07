@@ -3,24 +3,52 @@ import PropTypes from "prop-types";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
+import Avatar from '@material-ui/core/Avatar';
+import GitHub from '@material-ui/icons/GitHub';
+// import Twitter from '@material-ui/icons/Twitter';
+import XIcon from '@mui/icons-material/X';
+import MailOutlineOutlined from '@material-ui/icons/MailOutlineOutlined';
 import LinkedIn from '@material-ui/icons/LinkedIn';
+import CallReceived from '@material-ui/icons/CallReceived';
 import Hidden from '@material-ui/core/Hidden';
 import withWidth from '@material-ui/core/withWidth';
 
+// import font styles
+import { fontStyles } from "../utils/fontStyle.js";
+
 const useStyles = makeStyles({
   box: {
-    margin: "0 auto",
-    maxWidth: "1000px",
+    maxWidth: "100vw",
+    zIndex: "2",
+    // border: "1px solid blue",
+    display: "flex",
+    justifyContents: "flexStart"
+  },
+  leftContainer: {
+    // border: "1px solid green",
+    maxWidth: "35%",
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: "5rem"
+    // alignItems: "center"
+  },
+  rightContainer: {
+    // border: "1px solid orange",
+    paddingTop: "5rem",
+    maxWidth: "65%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start"
+  },
+  image: {
+    height: "47rem",
+    width: "30rem"
   },
   title: {
-    fontWeight: "bold",
-    fontFamily: "Fjalla one",
-    marginTop: "3rem",
-    marginBottom: "3rem",
+    fontWeight: `${fontStyles.headerBold}`,
+    fontFamily: `${fontStyles.header}`,
+    fontSize: `${fontStyles.headerSize}`,
+    // marginBottom: "3rem",
   },
   titleCenter: {
     fontWeight: "bold",
@@ -33,10 +61,16 @@ const useStyles = makeStyles({
   subtitle: {
     marginBottom: "3rem",
   },
+  textBox: {
+    paddingLeft: "0px",
+    // border: "1px solid green",
+    marginBottom: "3rem"
+  },
   text: {
     marginBottom: "1rem",
-    fontFamily: "Roboto",
+    fontFamily: `${fontStyles.text}`,
     textAlign: "justify",
+    // lineHeightStep: "48pt",
   },
   cardContainer: {
     display: "flex",
@@ -62,14 +96,62 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
   },
-  icon: {
-    height: "2rem",
-    width: "2rem",
-    marginRight: "0.5rem",
-  },
   cardText: {
     fontFamily: "Roboto",
     textAlign: "justify",
+  },
+  bolded: {
+    fontWeight: "700"
+  },
+  resumeBox: {
+    // border: "1px solid pink",
+    paddingLeft: "0px",
+  },
+  resumeLink: {
+    // border: "1px solid pink",
+    display: "flex",
+    paddingLeft: "0px",
+    marginBottom: "0.5rem"
+  },
+  linkBox: {
+    display: "flex",
+    // border: "1px solid red",
+    paddingLeft: "0px",
+    justifyContent: "flex-start"
+  },
+  avatar: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: "1rem",
+    backgroundColor: "transparent",
+    height: "3.8rem",
+    width: "3.8rem",
+    // border: "1px solid green",
+    "&:hover": {
+      // backgroundColor: "rgba(64, 1, 30, 1)",
+      cursor: "pointer"
+    }
+  },
+  avatarDownload: {
+    // border: "1px solid pink",
+    display: "block",
+    backgroundColor: "transparent"
+  },
+  icon: {
+    height: "2rem",
+    width: "2rem",
+  },
+  iconDownload: {
+    height: "1rem",
+    width: "1rem",
+    // border: "1px solid powderBlue",
+    transform: "scaleX(-1)",
+    // "&:hover": {
+    //   transform: "scaleX(-1) translate(-20px, 12px)"
+    // }
+    // bottom of the avatar box movement 
+    //transform: "scaleX(-1) translate(-20px, 12px)" ,
   },
   button: {
     fontFamily: "Roboto",
@@ -80,12 +162,13 @@ const useStyles = makeStyles({
     } 
   },
   linkText: {
+    // textDecorationColor: "rgba(64, 1, 30, 1)",
     textDecoration: "none",
     paddingLeft: "5px",
-    fontFamily: 'Roboto',
-    "&:hover": {
-      fontWeight: "600",
-    },
+    fontWeight: "600",
+    color: "rgba(64, 1, 30, 1)",
+    // fontFamily: `${fontStyles.text}`,
+    fontFamily: `Montserrat, sans-serif`,
   },
 });
 
@@ -98,249 +181,171 @@ const About = ({colors}) => {
   return (
     <React.Fragment>
       <Container className={classes.box}>
-        <Hidden smDown>
-          <Typography variant="h1" className={classes.title} style={{color:`${colors.about}`}}>About</Typography>
-        </Hidden>
-        <Hidden mdUp>
-          <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.about}`}}>About</Typography>
-        </Hidden>
-        <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
-          I currently live in the Washington DC area. I come from linguistics and education backgrounds. I combine my 10 years of experience of teaching English to Speakers of other Languages (ESOL), coaching, translation, team building, and teacher training into my current role as Chief Technology Officer at 
-            <a 
-              href="https://nuclius.com/" 
-              id="nuclius"
-              target="_blank"
-              rel="noreferrer"
-              className={classes.linkText}
+        <Container className={classes.leftContainer}>
+          <Avatar variant="rounded" className={classes.image} alt="Black and white portrait of Sean Naleid Vargas." src="https://kobalt-pics.s3.amazonaws.com/developer/sean-black-and-white.png"/>
+        </Container>
+        <Container className={classes.rightContainer}>
+          <Container className={classes.textBox}>
+            <Hidden smDown>
+              <Typography variant="h1" className={classes.title} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
+            </Hidden>
+            <Hidden mdUp>
+              <Typography variant="h1" className={classes.titleCenter} style={{color:`${colors.primary}`}}>Nice to meet you</Typography>
+            </Hidden>
+            <br />
+            <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`, lineHeight: "250%"}}>
+              Hey there, I&#39;m <span className={classes.bolded}>Sean</span>—a problem-solver and perpetual learner currently navigating the <span className={classes.bolded}>Product Owner</span> role at 
+                <a 
+                  href="https://www.kitestring.com/" 
+                  id="kitestring"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={classes.linkText}
+                  onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                  onMouseLeave={() => {setHover(false)}}
+                  style={{
+                    textDecoration: (hover && hoverId === 'kitestring' ? `underline` : null),
+                    textDecorationColor: (hover && hoverId === 'kitestring' ? `${colors.primary}` : null),
+                    cursor: (hover && hoverId === 'kitestring' ? "pointer" : null),
+                    color: `${colors.primary}`
+                  }} 
+                >
+                  Kitestring Technical Consultants.
+                </a> Beyond the professional realm, I&#39;m all about leveraging my mishmash of experiences. Whether it&#39;s working on a new coding project, delving into creative design, or experimenting with an idea, I&#39;m constantly exploring the vast landscape where technology and creativity collide.
+            </Typography>
+            <br />
+            <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`, lineHeight: "250%"}}>
+            This website is my playground, a space where I share my personal projects. It&#39;s one part notebook where I share notes on my thought process. One part sketchbook where I post designs. One part dev portfolio highlighting my coding projects. From experiments to more refined endeavors, consider this an open invitation to join me. <span className={classes.bolded}>Let&#39;s navigate this exciting journey together!</span>
+            </Typography>
+          </Container>
+
+          <Container className={classes.resumeBox}>
+            <Container 
+              className={classes.resumeLink}
+              id="download"
               onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
               onMouseLeave={() => {setHover(false)}}
-              style={{
-                color: (hover && hoverId === "nuclius" ? `${colors.highlight}` : `${colors.text}`),
-                textDecoration: (hover && hoverId === "nuclius" ? 'underline' : null),
-              }} 
             >
-              Nuclius
-            </a>.
-        </Typography>
-        <Typography variant="h6" className={classes.text} style={{color:`${colors.text}`}}>
-        My interest in web development sparked in a graduate translation class in Barcelona, Spain. Translating code related material comes with many difficulties due to the way that code is written. I was inspired to apply my linguistic and pedagogical experience to the coding world and offer a different point of view when writing code, mainly focusing on the user and how they will interact with the user interface. I am passionate about clean design and accessible products for everyone. 
-        </Typography>
-        <Hidden smDown>
-          <Typography variant="h2" className={classes.title} style={{ color: `${colors.about}`}}>Recommendations</Typography>
-        </Hidden>
-        <Hidden mdUp>
-          <Typography variant="h3" className={classes.titleCenter} style={{ color: `${colors.about}`}}>Recommendations</Typography>
-        </Hidden>
-        <Container className={classes.cardContainer}>
-          <Card className={classes.card}>
-            <CardContent style={{ backgroundColor: `${colors.body}`}}>
-              <div className={classes.cardTop}>
-                <LinkedIn className={classes.icon} style={{color:`${colors.text}`}}/>
-                <Typography className={classes.cardTitle} style={{color:`${colors.text}`}}>
-                  Erik R.
-                </Typography>
-              </div>
-              <Typography className={classes.cardText} style={{color:`${colors.text}`}}>
-                I was fortunate to be placed under Sean&apos;s leadership at Lambda.
-                Sean is a phenomenal person, speaker, and educator! One of his
-                skills I admired while interacting with Sean is his ability to
-                explain and break down complex software problems...
+              <Avatar variant="square" className={classes.avatarDownload} style={{backgroundColor: `${colors.text}`}}>
+                  <CallReceived  
+                    className={classes.iconDownload} 
+                    style={{
+                      color: `${colors.primary}`,
+                      transform: (hover && hoverId === 'resume' ? "scaleX(-1) translate(-20px, 15px)" : null),
+                    }}
+                  />
+              </Avatar>
+              <Typography 
+                variant="h6" 
+                id="resume"
+                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                onMouseLeave={() => {setHover(false)}}
+                style={{
+                  fontSize: "24px",
+                  color:`${colors.primary}`,
+                  textDecoration: (hover && hoverId === 'resume' ? `underline` : null),
+                  textDecorationColor: (hover && hoverId === 'resume' ? `${colors.primary}` : null),
+                  cursor: (hover && hoverId === 'resume' ? "pointer" : null),
+                  fontWeight: (hover && hoverId === 'resume' ? "800" : null),
+                }} 
+              >
+                Download my résumé
               </Typography>
-            </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="https://www.linkedin.com/in/sean-naleid/"
-                id="erik"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
+            </Container>
+            <Container className={classes.linkBox}>
+              <Avatar 
+                className={classes.avatar} 
+                id="email"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
                 style={{
-                  color: (hover && hoverId === "erik" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "erik"? `${colors.projects}` : `${colors.body}`),
+                  backgroundColor: (hover && hoverId === 'email' ? `${colors.primary}` : `${colors.background}`),
                 }} 
               >
-                Read More
-              </Button>
-            </CardActions>
-          </Card>
-          <Card className={classes.card}>
-            <CardContent style={{ backgroundColor: `${colors.body}`}}>
-              <div className={classes.cardTop}>
-                <LinkedIn className={classes.icon} style={{color:`${colors.text}`}}/>
-                <Typography className={classes.cardTitle} style={{color:`${colors.text}`}}>
-                  Josue R.
-                </Typography>
-              </div>
-              <Typography className={classes.cardText} style={{color:`${colors.text}`}}>
-                Sean was my Team Leader in Lambda and let me just say that Sean
-                is extremely capable and regularly goes beyond his role
-                description to get the job done. I’ve worked under Sean for well
-                over 3 months and has provided not only myself, but our whole
-                team...
-              </Typography>
-            </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="https://www.linkedin.com/in/sean-naleid/"
-                id="josue"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
+                <a 
+                  href="mailto:seannaleidvargas@gmail.com"
+                  target="_blank" 
+                  rel="noreferrer"
+                >
+                  <MailOutlineOutlined 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'email' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
+                </a>
+              </Avatar>
+              <Avatar 
+                className={classes.avatar} 
+                id="linkedin"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
                 style={{
-                  color: (hover && hoverId === "josue" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "josue"? `${colors.projects}` : `${colors.body}`),
+                  backgroundColor: (hover && hoverId === 'linkedin' ? `${colors.primary}` : `${colors.background}`),
                 }} 
               >
-                Read More
-              </Button>
-            </CardActions>
-          </Card>
-          <Card className={classes.card}>
-            <CardContent style={{ backgroundColor: `${colors.body}`}}>
-              <div className={classes.cardTop}>
-                <LinkedIn className={classes.icon} style={{color:`${colors.text}`}}/>
-                <Typography className={classes.cardTitle} style={{color:`${colors.text}`}}>
-                  Luis P.
-                </Typography>
-              </div>
-              <Typography className={classes.cardText} style={{color:`${colors.text}`}}>
-                Sean was my TL during the CORE Curriculum of Lambda School. At
-                all times, Sean demonstrated professionalism and full mastery
-                over the course material. Sean always went above and beyond to
-                help his students understand the material beyond...
-              </Typography>
-            </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="https://www.linkedin.com/in/sean-naleid/"
-                id="luis"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
+                <a 
+                  href="https://www.linkedin.com/in/sean-naleid-vargas/"
+                  target="_blank" 
+                  rel="noreferrer"
+                >
+                  <LinkedIn 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'linkedin' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
+                </a>
+              </Avatar>
+              <Avatar 
+                className={classes.avatar} 
+                id="github"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
                 style={{
-                  color: (hover && hoverId === "luis" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "luis"? `${colors.projects}` : `${colors.body}`),
+                  backgroundColor: (hover && hoverId === 'github' ? `${colors.primary}` : `${colors.background}`),
                 }} 
               >
-                Read More
-              </Button>
-            </CardActions>
-          </Card>
-          <Card className={classes.card}>
-            <CardContent style={{ backgroundColor: `${colors.body}`}}>
-              <div className={classes.cardTop}>
-                <LinkedIn className={classes.icon} style={{color:`${colors.text}`}}/>
-                <Typography className={classes.cardTitle} style={{color:`${colors.text}`}}>
-                William R.
-                </Typography>
-              </div>
-              <Typography className={classes.cardText} style={{color:`${colors.text}`}}>
-                If I had to sum Sean up in one word it would most definitely be
-                Teacher. In its truest form Sean was not simply a team leader
-                but I would go as far as calling him our personal instructor,
-                motivator, and most of all friend. He would take any and all
-                time needed to not only help us solve...
-              </Typography>
-            </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="https://www.linkedin.com/in/sean-naleid/"
-                id="william"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
+                <a 
+                  href="https://www.github.com/seanaleid"
+                  target="_blank" 
+                  rel="noreferrer"
+                >
+                  <GitHub 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'github' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
+                </a>
+              </Avatar>
+              <Avatar 
+                className={classes.avatar} 
+                id="twitterX"
                 onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
                 onMouseLeave={() => {setHover(false)}}
                 style={{
-                  color: (hover && hoverId === "william" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "william"? `${colors.projects}` : `${colors.body}`),
+                  backgroundColor: (hover && hoverId === 'twitterX' ? `${colors.primary}` : `${colors.background}`),
                 }} 
               >
-                Read More
-              </Button>
-            </CardActions>
-          </Card>
-          <Card className={classes.card}>
-            <CardContent style={{ backgroundColor: `${colors.body}`}}>
-              <div className={classes.cardTop}>
-                <LinkedIn className={classes.icon} style={{color:`${colors.text}`}}/>
-                <Typography className={classes.cardTitle} style={{color:`${colors.text}`}}>
-                Carl S.
-                </Typography>
-              </div>
-              <Typography className={classes.cardText} style={{color:`${colors.text}`}}>
-                Throughout my time at Lambda, Sean was the person I turned
-                everything into and asked all my questions. Sean not only spent
-                hours and hours of extra time with every single one of his
-                students in his group to ensure success, but also created a
-                comfortable and productive work environment...
-              </Typography>
-            </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-              <Button
-                size="small"
-                href="https://www.linkedin.com/in/sean-naleid/"
-                id="carl"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === "carl" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "carl"? `${colors.projects}` : `${colors.body}`),
-                }} 
-              >
-                Read More
-              </Button>
-            </CardActions>
-          </Card>
-          <Card className={classes.card}>
-            <CardContent style={{ backgroundColor: `${colors.body}`}}>
-                <div className={classes.cardTop}>
-                  <LinkedIn className={classes.icon} style={{color:`${colors.text}`}}/>
-                  <Typography className={classes.cardTitle} style={{color:`${colors.text}`}}>
-                  Brandon H.
-                  </Typography>
-                </div>
-                <Typography className={classes.cardText} style={{color:`${colors.text}`}}>
-                    Sean is one of the best people I have had the pleasure of
-                    working with. During my time as Section Lead I witnessed many
-                    students and fellow Team Leads receive help, either with advice
-                    on how to handle a situation, or some technical part of coding,
-                    and come away...
-                </Typography>
-            </CardContent>
-            <CardActions style={{ backgroundColor: `${colors.body}`}}>
-                <Button
-                size="small"
-                href="https://www.linkedin.com/in/sean-naleid/"
-                id="brandon"
-                target="_blank"
-                rel="noreferrer"
-                className={classes.button}
-                onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
-                onMouseLeave={() => {setHover(false)}}
-                style={{
-                  color: (hover && hoverId === "brandon" ? `${colors.hoverText}` : `${colors.text}`),
-                  backgroundColor: (hover &&  hoverId === "brandon"? `${colors.projects}` : `${colors.body}`),
-                }} 
-              >
-                Read More
-              </Button>
-            </CardActions>
-          </Card>
+                <a 
+                  href="https://twitter.com/SeanNaleid"
+                  target="_blank" 
+                  rel="noreferrer"
+                >
+                  <XIcon 
+                    className={classes.icon} 
+                    style={{
+                      color: (hover && hoverId === 'twitterX' ? `${colors.background}` : `${colors.primary}`),
+                    }} 
+                  />
+                </a>
+              </Avatar>
+            </Container>
+          </Container>
         </Container>
+        
+        
       </Container>
     </React.Fragment>
   );

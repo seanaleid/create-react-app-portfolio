@@ -78,3 +78,4 @@ Work.propTypes = {
 }
 
 export default withWidth()(Work);
+
