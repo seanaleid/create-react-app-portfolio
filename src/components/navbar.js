@@ -199,8 +199,6 @@ const ElevateAppBar = (props) => {
                   </Typography>
                   <Typography variant="h6" className={classes.text}>
                     <a href="https://seannaleidvargas.com/"
-                      target="_blank" 
-                      rel="noreferrer" 
                       className={classes.linkText} 
                       id="v2"
                       onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
