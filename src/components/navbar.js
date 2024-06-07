@@ -197,6 +197,22 @@ const ElevateAppBar = (props) => {
                       Contact
                     </Link>
                   </Typography>
+                  <Typography variant="h6" className={classes.text}>
+                    <a href="https://seannaleidvargas.com/"
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className={classes.linkText} 
+                      id="v2"
+                      onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
+                      onMouseLeave={() => {setHover(false)}}
+                      style={{
+                        color: (hover && hoverId === 'v2' ? `${colors.highlight}` : `${colors.text}`),
+                        borderBottom: (hover && hoverId === 'v2' ? `${colors.border}` : null),
+                      }}
+                    >
+                      V2
+                    </a>
+                  </Typography>
                   {/* <button onClick={toggleMode} className={classes.btn}>{ darkMode ? lightMoon : darkMoon }</button> */}
                 </Toolbar>
               </Toolbar>
