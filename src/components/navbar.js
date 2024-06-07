@@ -141,6 +141,16 @@ const ElevateAppBar = (props) => {
                 BLOG /
               </Link>
             </Typography>
+            <Typography variant="h6" className={classes.text}>
+              <a href="https://www.seanaleid.com/" 
+                className={classes.linkText} 
+                id="contact"
+                style={{color: `${colors.primary}`}}
+                rel="noreferrer"
+              >
+                V1 /
+              </a>
+            </Typography>
         </Toolbar>
       </Hidden>
       <Hidden mdUp>
