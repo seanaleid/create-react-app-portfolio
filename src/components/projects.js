@@ -124,7 +124,6 @@ const Projects = ({colors}) => {
       </Container>
       <Container className={classes.rightContainer}>
         <Hidden smDown>
-          <Typography variant="h6">Hello</Typography>
           {projectDetails.map((x,i)  => (
             <ProjectCard details={x} colors={colors} key={`${i}`}/>
           ))}
