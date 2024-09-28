@@ -194,7 +194,7 @@ const About = ({colors}) => {
             </Hidden>
             <br />
             <Typography variant="h6" className={classes.text} style={{color:`${colors.primary}`, lineHeight: "250%"}}>
-              Hey there, I&#39;m <span className={classes.bolded}>Sean</span>—a problem-solver and perpetual learner currently navigating the <span className={classes.bolded}>Product Owner</span> role at 
+              Hey there, I&#39;m <span className={classes.bolded}>Sean</span>—a problem-solver and perpetual learner currently navigating my roles as a <span className={classes.bolded}>Vue Software Engineer</span> at 
                 <a 
                   href="https://www.kitestring.com/" 
                   id="kitestring"

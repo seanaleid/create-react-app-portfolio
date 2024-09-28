@@ -11,8 +11,8 @@ import withWidth from '@material-ui/core/withWidth';
 import { fontStyles } from "../utils/fontStyle.js";
 
 // import component
-// import ProjectCard from "./projectCard.js";
-// import { projectDetails } from "./projectDetails.js";
+import ProjectCard from "./projectCard.js";
+import { projectDetails } from "./projectDetails.js";
 
 const useStyles = makeStyles({
   box: {
@@ -125,8 +125,9 @@ const Projects = ({colors}) => {
       <Container className={classes.rightContainer}>
         <Hidden smDown>
           <Typography variant="h6">Hello</Typography>
-          {/* <ProjectCard details={projectDetails}/> */}
-          {/* projectDetails.map((x,i) => x) */}
+          {projectDetails.map((x,i)  => (
+            <ProjectCard details={x} colors={colors} key={`${i}`}/>
+          ))}
         </Hidden>
       </Container>
         
