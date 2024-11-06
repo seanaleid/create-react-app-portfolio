@@ -17,6 +17,7 @@ import { projectDetails } from "./projectDetails.js";
 const useStyles = makeStyles({
   box: {
     maxWidth: "100vw",
+    
     zIndex: "2",
     // border: "1px solid blue",
     display: "flex",
@@ -31,11 +32,15 @@ const useStyles = makeStyles({
   },
   rightContainer: {
     // border: "1px solid orange",
+    maxHeight: "100vh",
     paddingTop: "5rem",
     maxWidth: "65%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
+  },
+  projectContainer: {
+    overflow: "scroll",
   },
   titleNav: {
     display: "flex",
@@ -107,6 +112,7 @@ const Projects = ({colors}) => {
   // const [designs, setDesigns] = useState(false);
   // console.log('SLUG', setSlug());
   // console.log(projectDetails)
+  const projectData = [...projectDetails];
 
   return (
     <React.Fragment>
@@ -123,11 +129,11 @@ const Projects = ({colors}) => {
         </Hidden>
       </Container>
       <Container className={classes.rightContainer}>
-        <Hidden smDown>
-          {projectDetails.map((x,i)  => (
+        <div className={classes.projectContainer}>
+          {projectData.map((x,i)  => (
             <ProjectCard details={x} colors={colors} key={`${i}`}/>
           ))}
-        </Hidden>
+        </div>
       </Container>
         
         <Hidden mdUp>

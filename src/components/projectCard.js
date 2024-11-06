@@ -6,15 +6,12 @@ import { Typography } from "@material-ui/core";
 import withWidth from '@material-ui/core/withWidth';
 import Avatar from '@material-ui/core/Avatar';
 import CallMade from '@material-ui/icons/CallMade';
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 
 // import font styles
 import { fontStyles } from "../utils/fontStyle.js";
 
 const useStyles = makeStyles({
   projectContainer: {
-    border: "1px solid pink",
     display: "flex",
     marginBottom: "1.5rem", 
     padding: '1rem',
@@ -22,7 +19,6 @@ const useStyles = makeStyles({
   },
   projectLeftContainer: {
     maxWidth: "30%",
-    border: "1px solid blue",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -35,17 +31,24 @@ const useStyles = makeStyles({
   },
   bottomImgBox: {
     display: 'flex',
-    border: '1px solid orange',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    height: '5rem'
   },
   chipClass: {
     width: "3rem",
     height: '1rem',
+    marginRight: '1rem',
   },
   image: {
     height: "11.93rem",
     width: "16.43rem",
     borderRadius: "0.5rem",
     margin: "1rem 0rem 0rem 0rem"
+  },
+  projectDuration: {
+    fontFamily: `${fontStyles.text}`,
   },
   projectTitleBar: {
     display: "flex",
@@ -66,10 +69,9 @@ const useStyles = makeStyles({
   },
   projectRightContainer: {
     maxWidth: "70%",
-    border: "1px solid green",
   },
   projectDescription: {
-    border: '1px solid pink',
+    // border: '1px solid pink',
     
   },
   projectDescriptionInner: {
@@ -78,7 +80,6 @@ const useStyles = makeStyles({
   thumbnailClass: {
     height: "10rem",
     width: "16rem",
-    border: '1px solid green',
     margin: "0rem 0rem 1rem 0rem"
   }
 });
@@ -89,8 +90,11 @@ const ProjectCard = (props) => {
   
   const classes = useStyles();
   const {colors, details} = props;
+  // const projectRoles = [...details.roles];
   
-  console.log('details inside the project cards', props)
+  console.log('details inside the project cards', props);
+  // console.log('roles inside the project cards', Array.isArray(details.roles));
+  console.log('projectRoles inside the project cards', details['roles']);
 
   return (
     <React.Fragment>
@@ -107,14 +111,14 @@ const ProjectCard = (props) => {
         <Container className={classes.projectLeftContainer}>
           <div className={classes.topImgBox}>
             <img className={classes.thumbnailClass} src={details.thumbnail}/>
-            <Typography style={{"color": `${colors.primary}`}}>{details.duration}</Typography>
+            <Typography className={classes.projectDuration} style={{"color": `${colors.primary}`}}>{details.duration}</Typography>
           </div>
-          <Stack className={classes.bottomImgBox}>
-            {details.roles.map((x,i) => {
-              console.log('Roles', x);
-              <Chip className={classes.chipClass} key={i} label="Test" variant='outlined'/>
+          <div className={classes.bottomImgBox}>
+            {details['roles'].map((x, i) => {
+              console.log('roles here: ', x);
+              return <Typography className={classes.projectRole} variant="h6" key={x} style={{"color": `${colors.primary}`}}>{x}</Typography>
             })}
-          </Stack>
+          </div>
         </Container>
         <Container className={classes.projectRightContainer}>
           <div 
@@ -123,18 +127,23 @@ const ProjectCard = (props) => {
             onMouseEnter={(e) => {setHover(true), setHoverId(e.target.id)}}
             onMouseLeave={() => {setHover(false)}} 
           >
-            <Typography 
-              id="projectTitle" 
-              variant="h6"
+            <a href={`${details.demo}`}
               style={{
                 fontSize: "24px",
                 color:`${colors.primary}`,
                 textDecoration: (hover && hoverId === 'projectTitle' ? `underline` : null),
-                textDecorationColor: (hover && hoverId === 'projectTitle' ? `${colors.primary}` : null),
+                textDecorationColor: `${colors.primary}` ,
                 cursor: (hover && hoverId === 'projectTitle' ? "pointer" : null),
                 fontWeight: (hover && hoverId === 'projectTitle' ? "800" : null),
               }}
-              >{details.title}</Typography>
+              rel="noreferrer"
+              target="_blank"
+            >
+            <Typography 
+              id="projectTitle" 
+              variant="h6"
+              
+              >{details.title}</Typography></a>
             <Avatar 
             variant="square" 
             className={classes.avatarDownload} 
